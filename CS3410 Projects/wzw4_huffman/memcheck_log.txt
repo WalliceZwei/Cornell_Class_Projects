@@ -1,0 +1,390 @@
+malloc(81) = 0x1559c01ea0 at compress.c line 29
+malloc(32) = 0x1559800b50 at huffman.c line 39
+malloc(16) = 0x1559e007b0 at priority_queue.c line 8
+malloc(32) = 0x1559800b20 at huffman.c line 39
+malloc(16) = 0x1559e00790 at priority_queue.c line 8
+malloc(32) = 0x1559800af0 at huffman.c line 39
+malloc(16) = 0x1559e00770 at priority_queue.c line 8
+malloc(32) = 0x1559800ac0 at huffman.c line 39
+malloc(16) = 0x1559e00750 at priority_queue.c line 8
+malloc(32) = 0x1559800a90 at huffman.c line 39
+malloc(16) = 0x1559e00730 at priority_queue.c line 8
+malloc(32) = 0x1559800a60 at huffman.c line 39
+malloc(16) = 0x1559e00710 at priority_queue.c line 8
+malloc(32) = 0x1559800a30 at huffman.c line 39
+malloc(16) = 0x1559e006f0 at priority_queue.c line 8
+malloc(32) = 0x1559800a00 at huffman.c line 39
+malloc(16) = 0x1559e006d0 at priority_queue.c line 8
+malloc(32) = 0x15598009d0 at huffman.c line 39
+malloc(16) = 0x1559e006b0 at priority_queue.c line 8
+malloc(32) = 0x15598009a0 at huffman.c line 39
+malloc(16) = 0x1559e00690 at priority_queue.c line 8
+malloc(32) = 0x1559800970 at huffman.c line 39
+malloc(16) = 0x1559e00670 at priority_queue.c line 8
+malloc(32) = 0x1559800940 at huffman.c line 39
+malloc(16) = 0x1559e00650 at priority_queue.c line 8
+malloc(32) = 0x1559800910 at huffman.c line 39
+malloc(16) = 0x1559e00630 at priority_queue.c line 8
+malloc(32) = 0x15598008e0 at huffman.c line 39
+malloc(16) = 0x1559e00610 at priority_queue.c line 8
+malloc(32) = 0x15598008b0 at huffman.c line 39
+malloc(16) = 0x1559e005f0 at priority_queue.c line 8
+malloc(32) = 0x1559800880 at huffman.c line 39
+malloc(16) = 0x1559e005d0 at priority_queue.c line 8
+malloc(32) = 0x1559800850 at huffman.c line 39
+malloc(16) = 0x1559e005b0 at priority_queue.c line 8
+malloc(32) = 0x1559800820 at huffman.c line 39
+malloc(16) = 0x1559e00590 at priority_queue.c line 8
+malloc(32) = 0x15598007f0 at huffman.c line 39
+malloc(16) = 0x1559e00570 at priority_queue.c line 8
+malloc(32) = 0x15598007c0 at huffman.c line 39
+malloc(16) = 0x1559e00550 at priority_queue.c line 8
+free(0x1559e00790) at huffman.c line 51
+free(0x1559e00770) at huffman.c line 54
+malloc(32) = 0x1559800790 at huffman.c line 55
+malloc(16) = 0x1559e00530 at priority_queue.c line 8
+free(0x1559e006b0) at huffman.c line 51
+free(0x1559e00670) at huffman.c line 54
+malloc(32) = 0x1559800760 at huffman.c line 55
+malloc(16) = 0x1559e00510 at priority_queue.c line 8
+free(0x1559e00610) at huffman.c line 51
+free(0x1559e00730) at huffman.c line 54
+malloc(32) = 0x1559800730 at huffman.c line 55
+malloc(16) = 0x1559e004f0 at priority_queue.c line 8
+free(0x1559e006d0) at huffman.c line 51
+free(0x1559e00570) at huffman.c line 54
+malloc(32) = 0x1559800700 at huffman.c line 55
+malloc(16) = 0x1559e004d0 at priority_queue.c line 8
+free(0x1559e00530) at huffman.c line 51
+free(0x1559e00510) at huffman.c line 54
+malloc(32) = 0x15598006d0 at huffman.c line 55
+malloc(16) = 0x1559e004b0 at priority_queue.c line 8
+free(0x1559e006f0) at huffman.c line 51
+free(0x1559e005f0) at huffman.c line 54
+malloc(32) = 0x15598006a0 at huffman.c line 55
+malloc(16) = 0x1559e00490 at priority_queue.c line 8
+free(0x1559e00550) at huffman.c line 51
+free(0x1559e004f0) at huffman.c line 54
+malloc(32) = 0x1559800670 at huffman.c line 55
+malloc(16) = 0x1559e00470 at priority_queue.c line 8
+free(0x1559e00750) at huffman.c line 51
+free(0x1559e00710) at huffman.c line 54
+malloc(32) = 0x1559800640 at huffman.c line 55
+malloc(16) = 0x1559e00450 at priority_queue.c line 8
+free(0x1559e005d0) at huffman.c line 51
+free(0x1559e004d0) at huffman.c line 54
+malloc(32) = 0x1559800610 at huffman.c line 55
+malloc(16) = 0x1559e00430 at priority_queue.c line 8
+free(0x1559e004b0) at huffman.c line 51
+free(0x1559e00630) at huffman.c line 54
+malloc(32) = 0x15598005e0 at huffman.c line 55
+malloc(16) = 0x1559e00410 at priority_queue.c line 8
+free(0x1559e00590) at huffman.c line 51
+free(0x1559e005b0) at huffman.c line 54
+malloc(32) = 0x15598005b0 at huffman.c line 55
+malloc(16) = 0x1559e003f0 at priority_queue.c line 8
+free(0x1559e00490) at huffman.c line 51
+free(0x1559e00470) at huffman.c line 54
+malloc(32) = 0x1559800580 at huffman.c line 55
+malloc(16) = 0x1559e003d0 at priority_queue.c line 8
+free(0x1559e00690) at huffman.c line 51
+free(0x1559e00450) at huffman.c line 54
+malloc(32) = 0x1559800550 at huffman.c line 55
+malloc(16) = 0x1559e003b0 at priority_queue.c line 8
+free(0x1559e00430) at huffman.c line 51
+free(0x1559e00410) at huffman.c line 54
+malloc(32) = 0x1559800520 at huffman.c line 55
+malloc(16) = 0x1559e00390 at priority_queue.c line 8
+free(0x1559e003f0) at huffman.c line 51
+free(0x1559e00650) at huffman.c line 54
+malloc(32) = 0x15598004f0 at huffman.c line 55
+malloc(16) = 0x1559e00370 at priority_queue.c line 8
+free(0x1559e003d0) at huffman.c line 51
+free(0x1559e007b0) at huffman.c line 54
+malloc(32) = 0x15598004c0 at huffman.c line 55
+malloc(16) = 0x1559e00350 at priority_queue.c line 8
+free(0x1559e003b0) at huffman.c line 51
+free(0x1559e00390) at huffman.c line 54
+malloc(32) = 0x1559800490 at huffman.c line 55
+malloc(16) = 0x1559e00330 at priority_queue.c line 8
+free(0x1559e00370) at huffman.c line 51
+free(0x1559e00350) at huffman.c line 54
+malloc(32) = 0x1559800460 at huffman.c line 55
+malloc(16) = 0x1559e00310 at priority_queue.c line 8
+free(0x1559e00330) at huffman.c line 51
+free(0x1559e00310) at huffman.c line 54
+malloc(32) = 0x1559800430 at huffman.c line 55
+malloc(16) = 0x1559e002f0 at priority_queue.c line 8
+free(0x1559e002f0) at huffman.c line 67
+free(0x15598009a0) at huffman.c line 79
+free(0x1559800ac0) at huffman.c line 79
+free(0x1559800a60) at huffman.c line 79
+free(0x1559800640) at huffman.c line 79
+free(0x1559800550) at huffman.c line 79
+free(0x1559800880) at huffman.c line 79
+free(0x1559800a00) at huffman.c line 79
+free(0x15598007f0) at huffman.c line 79
+free(0x1559800700) at huffman.c line 79
+free(0x1559800610) at huffman.c line 79
+free(0x1559800b20) at huffman.c line 79
+free(0x1559800af0) at huffman.c line 79
+free(0x1559800790) at huffman.c line 79
+free(0x15598009d0) at huffman.c line 79
+free(0x1559800970) at huffman.c line 79
+free(0x1559800760) at huffman.c line 79
+free(0x15598006d0) at huffman.c line 79
+free(0x1559800910) at huffman.c line 79
+free(0x15598005e0) at huffman.c line 79
+free(0x1559800520) at huffman.c line 79
+free(0x1559800490) at huffman.c line 79
+free(0x1559800820) at huffman.c line 79
+free(0x1559800850) at huffman.c line 79
+free(0x15598005b0) at huffman.c line 79
+free(0x1559800940) at huffman.c line 79
+free(0x15598004f0) at huffman.c line 79
+free(0x1559800a30) at huffman.c line 79
+free(0x15598008b0) at huffman.c line 79
+free(0x15598006a0) at huffman.c line 79
+free(0x15598007c0) at huffman.c line 79
+free(0x15598008e0) at huffman.c line 79
+free(0x1559800a90) at huffman.c line 79
+free(0x1559800730) at huffman.c line 79
+free(0x1559800670) at huffman.c line 79
+free(0x1559800580) at huffman.c line 79
+free(0x1559800b50) at huffman.c line 79
+free(0x15598004c0) at huffman.c line 79
+free(0x1559800460) at huffman.c line 79
+free(0x1559800430) at huffman.c line 79
+free(0x1559c01ea0) at compress.c line 68
+malloc(32) = 0x1559800b50 at decompress.c line 27
+malloc(16) = 0x1559d007b0 at priority_queue.c line 33
+malloc(32) = 0x1559800b20 at decompress.c line 27
+malloc(16) = 0x1559d00790 at priority_queue.c line 33
+malloc(32) = 0x1559800af0 at decompress.c line 27
+malloc(16) = 0x1559d00770 at priority_queue.c line 33
+malloc(32) = 0x1559800ac0 at decompress.c line 45
+malloc(16) = 0x1559d00750 at priority_queue.c line 33
+malloc(16) = 0x1559d00730 at priority_queue.c line 33
+malloc(16) = 0x1559d00710 at priority_queue.c line 33
+malloc(32) = 0x1559800a90 at decompress.c line 45
+malloc(16) = 0x1559d006f0 at priority_queue.c line 33
+malloc(16) = 0x1559d006d0 at priority_queue.c line 33
+malloc(16) = 0x1559d006b0 at priority_queue.c line 33
+malloc(32) = 0x1559800a60 at decompress.c line 27
+malloc(16) = 0x1559d00690 at priority_queue.c line 33
+malloc(32) = 0x1559800a30 at decompress.c line 27
+malloc(16) = 0x1559d00670 at priority_queue.c line 33
+malloc(32) = 0x1559800a00 at decompress.c line 27
+malloc(16) = 0x1559d00650 at priority_queue.c line 33
+malloc(32) = 0x15598009d0 at decompress.c line 45
+malloc(16) = 0x1559d00630 at priority_queue.c line 33
+malloc(16) = 0x1559d00610 at priority_queue.c line 33
+malloc(16) = 0x1559d005f0 at priority_queue.c line 33
+malloc(32) = 0x15598009a0 at decompress.c line 45
+malloc(16) = 0x1559d005d0 at priority_queue.c line 33
+malloc(16) = 0x1559d005b0 at priority_queue.c line 33
+malloc(16) = 0x1559d00590 at priority_queue.c line 33
+malloc(32) = 0x1559800970 at decompress.c line 27
+malloc(16) = 0x1559d00570 at priority_queue.c line 33
+malloc(32) = 0x1559800940 at decompress.c line 27
+malloc(16) = 0x1559d00550 at priority_queue.c line 33
+malloc(32) = 0x1559800910 at decompress.c line 45
+malloc(16) = 0x1559d00530 at priority_queue.c line 33
+malloc(16) = 0x1559d00510 at priority_queue.c line 33
+malloc(16) = 0x1559d004f0 at priority_queue.c line 33
+malloc(32) = 0x15598008e0 at decompress.c line 27
+malloc(16) = 0x1559d004d0 at priority_queue.c line 33
+malloc(32) = 0x15598008b0 at decompress.c line 27
+malloc(16) = 0x1559d004b0 at priority_queue.c line 33
+malloc(32) = 0x1559800880 at decompress.c line 45
+malloc(16) = 0x1559d00490 at priority_queue.c line 33
+malloc(16) = 0x1559d00470 at priority_queue.c line 33
+malloc(16) = 0x1559d00450 at priority_queue.c line 33
+malloc(32) = 0x1559800850 at decompress.c line 45
+malloc(16) = 0x1559d00430 at priority_queue.c line 33
+malloc(16) = 0x1559d00410 at priority_queue.c line 33
+malloc(16) = 0x1559d003f0 at priority_queue.c line 33
+malloc(32) = 0x1559800820 at decompress.c line 27
+malloc(16) = 0x1559d003d0 at priority_queue.c line 33
+malloc(32) = 0x15598007f0 at decompress.c line 45
+malloc(16) = 0x1559d003b0 at priority_queue.c line 33
+malloc(16) = 0x1559d00390 at priority_queue.c line 33
+malloc(16) = 0x1559d00370 at priority_queue.c line 33
+malloc(32) = 0x15598007c0 at decompress.c line 45
+malloc(16) = 0x1559d00350 at priority_queue.c line 33
+malloc(16) = 0x1559d00330 at priority_queue.c line 33
+malloc(16) = 0x1559d00310 at priority_queue.c line 33
+malloc(32) = 0x1559800790 at decompress.c line 45
+malloc(16) = 0x1559d002f0 at priority_queue.c line 33
+malloc(16) = 0x1559d002d0 at priority_queue.c line 33
+malloc(16) = 0x1559d002b0 at priority_queue.c line 33
+malloc(32) = 0x1559800760 at decompress.c line 27
+malloc(16) = 0x1559d00290 at priority_queue.c line 33
+malloc(32) = 0x1559800730 at decompress.c line 27
+malloc(16) = 0x1559d00270 at priority_queue.c line 33
+malloc(32) = 0x1559800700 at decompress.c line 45
+malloc(16) = 0x1559d00250 at priority_queue.c line 33
+malloc(16) = 0x1559d00230 at priority_queue.c line 33
+malloc(16) = 0x1559d00210 at priority_queue.c line 33
+malloc(32) = 0x15598006d0 at decompress.c line 27
+malloc(16) = 0x1559d001f0 at priority_queue.c line 33
+malloc(32) = 0x15598006a0 at decompress.c line 45
+malloc(16) = 0x1559d001d0 at priority_queue.c line 33
+malloc(16) = 0x1559d001b0 at priority_queue.c line 33
+malloc(16) = 0x1559d00190 at priority_queue.c line 33
+malloc(32) = 0x1559800670 at decompress.c line 27
+malloc(16) = 0x1559d00170 at priority_queue.c line 33
+malloc(32) = 0x1559800640 at decompress.c line 27
+malloc(16) = 0x1559d00150 at priority_queue.c line 33
+malloc(32) = 0x1559800610 at decompress.c line 45
+malloc(16) = 0x1559d00130 at priority_queue.c line 33
+malloc(16) = 0x1559d00110 at priority_queue.c line 33
+malloc(16) = 0x1559d000f0 at priority_queue.c line 33
+malloc(32) = 0x15598005e0 at decompress.c line 27
+malloc(16) = 0x1559d000d0 at priority_queue.c line 33
+malloc(32) = 0x15598005b0 at decompress.c line 27
+malloc(16) = 0x1559d000b0 at priority_queue.c line 33
+malloc(32) = 0x1559800580 at decompress.c line 27
+malloc(16) = 0x1559d00090 at priority_queue.c line 33
+malloc(32) = 0x1559800550 at decompress.c line 45
+malloc(16) = 0x1559d00070 at priority_queue.c line 33
+malloc(16) = 0x1559d00050 at priority_queue.c line 33
+malloc(16) = 0x1559d00030 at priority_queue.c line 33
+malloc(32) = 0x1559800520 at decompress.c line 45
+malloc(16) = 0x1559d00010 at priority_queue.c line 33
+malloc(16) = 0x1559d00f70 at priority_queue.c line 33
+malloc(16) = 0x1559d00f50 at priority_queue.c line 33
+malloc(32) = 0x15598004f0 at decompress.c line 45
+malloc(16) = 0x1559d00f30 at priority_queue.c line 33
+malloc(16) = 0x1559d00f10 at priority_queue.c line 33
+malloc(16) = 0x1559d00ef0 at priority_queue.c line 33
+malloc(32) = 0x15598004c0 at decompress.c line 27
+malloc(16) = 0x1559d00ed0 at priority_queue.c line 33
+malloc(32) = 0x1559800490 at decompress.c line 45
+malloc(16) = 0x1559d00eb0 at priority_queue.c line 33
+malloc(16) = 0x1559d00e90 at priority_queue.c line 33
+malloc(16) = 0x1559d00e70 at priority_queue.c line 33
+malloc(32) = 0x1559800460 at decompress.c line 45
+malloc(16) = 0x1559d00e50 at priority_queue.c line 33
+malloc(16) = 0x1559d00e30 at priority_queue.c line 33
+malloc(16) = 0x1559d00e10 at priority_queue.c line 33
+malloc(32) = 0x1559800430 at decompress.c line 45
+malloc(16) = 0x1559d00df0 at priority_queue.c line 33
+malloc(16) = 0x1559d00dd0 at priority_queue.c line 33
+malloc(16) = 0x1559d00db0 at priority_queue.c line 33
+free(0x1559d00e50) at priority_queue.c line 57
+free(0x1559d00db0) at priority_queue.c line 58
+free(0x1559d002f0) at priority_queue.c line 57
+free(0x1559d00dd0) at priority_queue.c line 58
+free(0x1559d00eb0) at priority_queue.c line 57
+free(0x1559d00e10) at priority_queue.c line 58
+free(0x1559d001d0) at priority_queue.c line 57
+free(0x1559d00e30) at priority_queue.c line 58
+free(0x1559d00ed0) at priority_queue.c line 57
+free(0x1559d00e70) at priority_queue.c line 58
+free(0x1559d00f30) at priority_queue.c line 57
+free(0x1559d00e90) at priority_queue.c line 58
+free(0x1559d00010) at priority_queue.c line 57
+free(0x1559d00ef0) at priority_queue.c line 58
+free(0x1559d00130) at priority_queue.c line 57
+free(0x1559d00f10) at priority_queue.c line 58
+free(0x1559d00070) at priority_queue.c line 57
+free(0x1559d00f50) at priority_queue.c line 58
+free(0x1559d000d0) at priority_queue.c line 57
+free(0x1559d00f70) at priority_queue.c line 58
+free(0x1559d00090) at priority_queue.c line 57
+free(0x1559d00030) at priority_queue.c line 58
+free(0x1559d000b0) at priority_queue.c line 57
+free(0x1559d00050) at priority_queue.c line 58
+free(0x1559d00150) at priority_queue.c line 57
+free(0x1559d000f0) at priority_queue.c line 58
+free(0x1559d00170) at priority_queue.c line 57
+free(0x1559d00110) at priority_queue.c line 58
+free(0x1559d001f0) at priority_queue.c line 57
+free(0x1559d00190) at priority_queue.c line 58
+free(0x1559d00250) at priority_queue.c line 57
+free(0x1559d001b0) at priority_queue.c line 58
+free(0x1559d00270) at priority_queue.c line 57
+free(0x1559d00210) at priority_queue.c line 58
+free(0x1559d00290) at priority_queue.c line 57
+free(0x1559d00230) at priority_queue.c line 58
+free(0x1559d00350) at priority_queue.c line 57
+free(0x1559d002b0) at priority_queue.c line 58
+free(0x1559d006f0) at priority_queue.c line 57
+free(0x1559d002d0) at priority_queue.c line 58
+free(0x1559d003b0) at priority_queue.c line 57
+free(0x1559d00310) at priority_queue.c line 58
+free(0x1559d005d0) at priority_queue.c line 57
+free(0x1559d00330) at priority_queue.c line 58
+free(0x1559d003d0) at priority_queue.c line 57
+free(0x1559d00370) at priority_queue.c line 58
+free(0x1559d00430) at priority_queue.c line 57
+free(0x1559d00390) at priority_queue.c line 58
+free(0x1559d00490) at priority_queue.c line 57
+free(0x1559d003f0) at priority_queue.c line 58
+free(0x1559d00530) at priority_queue.c line 57
+free(0x1559d00410) at priority_queue.c line 58
+free(0x1559d004b0) at priority_queue.c line 57
+free(0x1559d00450) at priority_queue.c line 58
+free(0x1559d004d0) at priority_queue.c line 57
+free(0x1559d00470) at priority_queue.c line 58
+free(0x1559d00550) at priority_queue.c line 57
+free(0x1559d004f0) at priority_queue.c line 58
+free(0x1559d00570) at priority_queue.c line 57
+free(0x1559d00510) at priority_queue.c line 58
+free(0x1559d00630) at priority_queue.c line 57
+free(0x1559d00590) at priority_queue.c line 58
+free(0x1559d00690) at priority_queue.c line 57
+free(0x1559d005b0) at priority_queue.c line 58
+free(0x1559d00650) at priority_queue.c line 57
+free(0x1559d005f0) at priority_queue.c line 58
+free(0x1559d00670) at priority_queue.c line 57
+free(0x1559d00610) at priority_queue.c line 58
+free(0x1559d00750) at priority_queue.c line 57
+free(0x1559d006b0) at priority_queue.c line 58
+free(0x1559d007b0) at priority_queue.c line 57
+free(0x1559d006d0) at priority_queue.c line 58
+free(0x1559d00770) at priority_queue.c line 57
+free(0x1559d00710) at priority_queue.c line 58
+free(0x1559d00790) at priority_queue.c line 57
+free(0x1559d00730) at priority_queue.c line 58
+free(0x1559d00df0) at decompress.c line 38
+free(0x1559800b50) at huffman.c line 79
+free(0x1559800b20) at huffman.c line 79
+free(0x1559800af0) at huffman.c line 79
+free(0x1559800ac0) at huffman.c line 79
+free(0x1559800a90) at huffman.c line 79
+free(0x1559800a60) at huffman.c line 79
+free(0x1559800a30) at huffman.c line 79
+free(0x1559800a00) at huffman.c line 79
+free(0x15598009d0) at huffman.c line 79
+free(0x15598009a0) at huffman.c line 79
+free(0x1559800970) at huffman.c line 79
+free(0x1559800940) at huffman.c line 79
+free(0x1559800910) at huffman.c line 79
+free(0x15598008e0) at huffman.c line 79
+free(0x15598008b0) at huffman.c line 79
+free(0x1559800880) at huffman.c line 79
+free(0x1559800850) at huffman.c line 79
+free(0x1559800820) at huffman.c line 79
+free(0x15598007f0) at huffman.c line 79
+free(0x15598007c0) at huffman.c line 79
+free(0x1559800790) at huffman.c line 79
+free(0x1559800760) at huffman.c line 79
+free(0x1559800730) at huffman.c line 79
+free(0x1559800700) at huffman.c line 79
+free(0x15598006d0) at huffman.c line 79
+free(0x15598006a0) at huffman.c line 79
+free(0x1559800670) at huffman.c line 79
+free(0x1559800640) at huffman.c line 79
+free(0x1559800610) at huffman.c line 79
+free(0x15598005e0) at huffman.c line 79
+free(0x15598005b0) at huffman.c line 79
+free(0x1559800580) at huffman.c line 79
+free(0x1559800550) at huffman.c line 79
+free(0x1559800520) at huffman.c line 79
+free(0x15598004f0) at huffman.c line 79
+free(0x15598004c0) at huffman.c line 79
+free(0x1559800490) at huffman.c line 79
+free(0x1559800460) at huffman.c line 79
+free(0x1559800430) at huffman.c line 79

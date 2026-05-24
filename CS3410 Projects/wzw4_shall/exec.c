@@ -1,0 +1,392 @@
+/* Author: Robbert van Renesse 2018
+ *
+ * Architecture-dependent code.
+ */
+#define _POSIX_C_SOURCE 200112L // for setenv
+
+#include "shall.h"
+#include <assert.h>
+#include <dirent.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+
+/* local functions already completed: */
+static void redir(command_t command);
+static void do_exec(char **argv);
+static void execute(command_t command);
+static void do_exit(command_t command);
+static void exec(command_t command);
+static void export(command_t command);
+static int builtin_check(command_t command, int background);
+
+/* local functions you will complete: */
+static void redir_fd(int fd1, int fd2);
+static void redir_file(char *name, int fd, int flags);
+static void spawn(command_t command, int background);
+static void sighandler(int sig);
+static void spawn(command_t command, int background);
+static void cd(command_t command);
+static void source(command_t command);
+
+/*******************************************************************************
+ * YOUR JOB:  complete the bodies of code marked with "// BEGIN" and "// END". *
+ *******************************************************************************/
+
+/* This is a simple signal handler that prints the signal number. It's fine to
+ * leave as-is.
+ */
+static void sighandler(int sig) { printf("got signal %d\n", sig); }
+
+/* Disable interrupts.
+ */
+void interrupts_disable() {
+  // BEGIN
+  /* This code is already finished.  It's an example of what you need
+   * to do with the other BEGIN/END sections in this file.
+   */
+  signal(SIGINT, SIG_IGN);
+  // END
+}
+
+/* Enable interrupts, causing the process to terminate.
+ */
+void interrupts_enable() {
+  // BEGIN
+  signal(SIGINT, SIG_DFL);
+  // END
+}
+
+/* Enable interrupts, and cause the process to invoke sighandler() when
+ * an interrupt occurs.
+ */
+void interrupts_catch() {
+  // BEGIN
+  signal(SIGINT, sighandler);
+  // END
+}
+
+/* This implements '{fd1} > {fd2}' directives.  That is, any output
+ * produced by file descriptor fd1 should go to the same place as fd2,
+ * or in other words, fd1 is to become a copy of fd2.  If redirection
+ * fails, _exit(1) causes the process to fail before executing the command.
+ */
+static void redir_fd(int fd1, int fd2) {
+  // BEGIN
+  if (dup2(fd2, fd1) < 0) {
+    perror("dup2");
+    _exit(1);
+  }
+  // END
+}
+
+/* Redirect file descriptor fd to file 'name'.  flags are for the
+ * open() system call and specify if the file should be opened for
+ * reading, writing, etc.  If the file is to be created, mode 0644
+ * is used.
+ */
+static void redir_file(char *name, int fd, int flags) {
+  // BEGIN
+  int file_fd;
+  if (flags & O_CREAT) {
+    file_fd = open(name, flags, 0644);
+  } else {
+    file_fd = open(name, flags);
+  }
+  if (file_fd < 0) {
+    perror("open");
+    _exit(1);
+  }
+  if (dup2(file_fd, fd) < 0) {
+    perror("dup2");
+    _exit(1);
+  }
+  close(file_fd);
+  // END
+}
+
+/* Handle the I/O redirections in the command in the order given.
+ */
+static void redir(command_t command) {
+  int i;
+  for (i = 0; i < command->nredirs; i++) {
+    element_t elt = command->redirs[i];
+    switch (elt->type) {
+    case ELEMENT_REDIR_FILE_IN:
+      redir_file(elt->u.redir_file.name, elt->u.redir_file.fd, O_RDONLY);
+      break;
+    case ELEMENT_REDIR_FILE_OUT:
+      redir_file(elt->u.redir_file.name, elt->u.redir_file.fd,
+                 O_WRONLY | O_CREAT | O_TRUNC);
+      break;
+    case ELEMENT_REDIR_FILE_APPEND:
+      redir_file(elt->u.redir_file.name, elt->u.redir_file.fd,
+                 O_WRONLY | O_CREAT | O_APPEND);
+      break;
+    case ELEMENT_REDIR_FD_IN:
+    case ELEMENT_REDIR_FD_OUT:
+      redir_fd(elt->u.redir_fd.fd1, elt->u.redir_fd.fd2);
+      break;
+    default:
+      assert(0);
+    }
+  }
+}
+
+/* Try to execute the given argument vector (the first of which
+ * indicates the executable itself.
+ */
+static void do_exec(char **argv) {
+  if (strchr(argv[0], '/') == 0) {
+    char *path = getenv("PATH");
+    size_t proglen = strlen(argv[0]);
+
+    if (path == 0) {
+      path = "";
+    }
+
+    for (;;) {
+      char *r = strchr(path, ':');
+      size_t len;
+
+      if (r == 0) {
+        len = strlen(path);
+      } else {
+        len = (size_t)(r - path);
+      }
+      if (len == 0) {
+        execv(argv[0], argv);
+      } else {
+        char *file = malloc(proglen + len + 2);
+        sprintf(file, "%.*s/%s", (int)len, path, argv[0]);
+        execv(file, argv);
+        free(file);
+      }
+      if (r == 0) {
+        break;
+      }
+      path = r + 1;
+    }
+    fprintf(stderr, "%s: command not found\n", argv[0]);
+    exit(1);
+  } else {
+    execv(argv[0], argv);
+    perror(argv[0]);
+    _exit(1);
+  }
+}
+
+/* This function can be used by spawn() to execute the command after
+ * forking and redirecting I/O.
+ */
+static void execute(command_t command) { do_exec(command->argv); }
+
+/* Spawn the given command.  Run in the background if argument 'background'
+ * is true (non-zero).  Otherwise wait for the command to finish.  Also
+ * print information about abnormally ending processes or terminated
+ * processes that ran in the background.
+ */
+static void spawn(command_t command, int background) {
+  // BEGIN
+  pid_t pid = fork();
+  if (pid < 0) {
+    perror("fork");
+    return;
+  }
+
+  if (pid == 0) {
+    if (background) {
+      interrupts_disable();
+    } else {
+      interrupts_enable();
+    }
+    redir(command);
+    execute(command);
+    _exit(1);
+  }
+
+  if (background) {
+    printf("process %d running in background\n", (int)pid);
+    fflush(stdout);
+    return;
+  }
+
+  int status;
+  pid_t waited;
+  while ((waited = wait(&status)) > 0) {
+    if (waited == pid) {
+      if (WIFSIGNALED(status)) {
+        printf("process %d exited with signal %d\n", (int)waited,
+               WTERMSIG(status));
+      } else if (WIFEXITED(status) && WEXITSTATUS(status) != 0) {
+        printf("process %d exited with status %d\n", (int)waited,
+               WEXITSTATUS(status));
+      }
+      fflush(stdout);
+      break;
+    } else {
+      if (WIFSIGNALED(status)) {
+        printf("process %d exited with signal %d\n", (int)waited,
+               WTERMSIG(status));
+      } else if (WIFEXITED(status)) {
+        printf("process %d exited with status %d\n", (int)waited,
+               WEXITSTATUS(status));
+      }
+      fflush(stdout);
+    }
+  }
+  // END
+}
+
+/* Change the current working directory to command->argv[1], or to
+ * the directory in environment variable $HOME if command->argv[1] = null.
+ *
+ * If the directory does not exist, or if any errors occur while chaning the
+ * current directory, be sure to print them out.
+ */
+static void cd(command_t command) {
+  if (command->argc > 3) {
+    fprintf(stderr, "Usage: cd [directory]\n");
+    return;
+  }
+  char *dir = command->argv[1];
+  // BEGIN
+  if (dir == NULL) {
+    dir = getenv("HOME");
+    if (dir == NULL) {
+      fprintf(stderr, "cd: HOME isn't set\n");
+      return;
+    }
+  }
+  if (chdir(dir) == -1) {
+    perror("cd");
+  }
+  // END
+}
+
+/* Read commands from the specified files in the list of arguments.
+ * of the command.
+ */
+static void source(command_t command) {
+  int i;
+
+  for (i = 1; command->argv[i] != 0; i++) {
+    char *file = command->argv[i];
+    // BEGIN
+    int fd = open(file, O_RDONLY);
+    if (fd < 0) {
+      perror(file);
+      continue;
+    }
+    reader_t reader = reader_create(fd);
+    interpret(reader, 0);
+    reader_free(reader);
+    close(fd);
+    // END
+  }
+}
+
+/* Exit the shall.
+ */
+static void do_exit(command_t command) {
+  if (command->argc > 3) {
+    fprintf(stderr, "Usage: exit [status]\n");
+    return;
+  }
+  char *status = command->argv[1];
+  // free command before we exit
+  free_command(command);
+
+  exit(status == nullptr ? 0 : atoi(status));
+}
+
+/* Exec the given command, replacing the shall with it.
+ */
+static void exec(command_t command) {
+  redir(command);
+  if (command->argc > 2) {
+    do_exec(&command->argv[1]);
+  }
+}
+
+/* Export the given environment variable. in the format export var1=value1
+ * var2=value2 ...*/
+static void export(command_t command) {
+  if (command->argc <= 2) { // command name + NULL terminator
+    extern char **environ;
+    if (environ) {
+      for (char **env = environ; *env; env++) {
+        printf("%s\n", *env);
+      }
+    }
+    return;
+  }
+
+  for (int i = 1; i < command->argc - 1; i++) {
+    char *arg = command->argv[i];
+    if (!arg)
+      continue;
+    char *equals = strchr(arg, '=');
+    if (equals) {
+      // Split VAR=VALUE into VAR and VALUE
+      *equals = '\0';
+      char *var = arg;
+      char *value = equals + 1;
+      setenv(var, value, 1);
+      *equals = '=';
+    } else if (getenv(arg) == NULL) {
+      setenv(arg, "", 0);
+    }
+  }
+}
+
+/* Builtin commands cannot run in background and I/O cannot be redirected.
+ */
+static int builtin_check(command_t command, int background) {
+  if (background) {
+    fprintf(stderr, "can't run builtin commands in background\n");
+    return 0;
+  }
+  if (command->nredirs > 0) {
+    fprintf(stderr, "can't redirect I/O for builtin commands\n");
+    return 0;
+  }
+  return 1;
+}
+
+/* Perform the command in the arguments list.
+ */
+void perform(command_t command, int background) {
+  if (strcmp(command->argv[0], "cd") == 0) {
+    if (builtin_check(command, background)) {
+      cd(command);
+    }
+  } else if (strcmp(command->argv[0], "source") == 0) {
+    if (builtin_check(command, background)) {
+      source(command);
+    }
+  } else if (strcmp(command->argv[0], "exit") == 0) {
+    if (builtin_check(command, background)) {
+      do_exit(command);
+    }
+  } else if (strcmp(command->argv[0], "exec") == 0) {
+    if (background) {
+      fprintf(stderr, "can't exec in background\n");
+    } else {
+      exec(command);
+    }
+  } else if (strcmp(command->argv[0], "export") == 0) {
+    if (builtin_check(command, background)) {
+      export(command);
+    }
+  } else {
+    spawn(command, background);
+  }
+}

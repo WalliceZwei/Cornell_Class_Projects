@@ -1,0 +1,136 @@
+CMDS:
+xori t0,zero,1
+xori t1,zero,2
+equal:
+addi t0,t0,2
+addi t1,t1,1
+beq t0,t1,equal
+and t2,t1,t0
+OUTS: 5@0x5 6@0x4 7@0x4
+
+CMDS:
+lui  x5, 0x7FFFF       
+addi x5, x5, 0x7FF         
+sw   x5, 8(x10)
+lw   x6, 8(x10)
+OUTS: 5@0x7ffff7ff 6@0x7ffff7ff
+
+CMDS:
+addi t0, zero, 1
+addi t1, zero, 31
+sll t3, t0, t1
+OUTS: 5@0x1 6@0x1f 28@0x80000000
+
+CMDS:
+addi x1, x0, 0x7F
+sb   x1, 0(x10)
+lb   x2, 0(x10)
+OUTS: 1@0x7f 2@0x7f
+
+CMDS:
+lui s0, 0x10000
+addi t0, zero, 42   
+addi t1, zero, 99     
+sw t0, 0(s0)
+sw t1, 4(s0)
+addi t0, zero, 0
+addi t1, zero, 0
+lw t0, 0(s0)
+lw t1, 4(s0)
+OUTS: 5@0x2a 6@0x63 8@0x10000000
+
+CMDS:
+lui s0, 0x1000     
+addi t4, zero, 32   
+lui t0, 0x12340      
+addi t0, t0, 0x123  
+lui t1, 0x12340    
+addi t1, t1, 0x123  
+sll t1, t1, t4
+add t0, t0, t1
+sd t0, 0(s0)
+addi t0, zero, 0
+ld t0, 0(s0)
+OUTS: 5@0x1234012312340123 6@0x1234012300000000 8@0x1000000 29@0x20
+
+CMDS:
+addi t0, zero, -50
+addi t1, zero, 7
+sub t2, t0, t1 
+OUTS: 5@0xffffffffffffffce 6@0x7 7@0xffffffffffffffc7
+
+CMDS:
+addi t0, zero, -32
+addi t1, zero, 2
+sra t2, t0, t1
+OUTS: 5@0xffffffffffffffe0 6@0x2 7@0xfffffffffffffff8
+
+CMDS:
+addi t0, zero, 5
+addi t1, zero, 10
+slt t2, t0, t1 
+OUTS: 5@0x5 6@0xa 7@0x1
+
+CMDS:
+addi t0, zero, 10
+addi t1, zero, 5
+slt t3, t0, t1
+OUTS: 5@0xa 6@0x5
+
+CMDS:
+addi t0, zero, 0b101010
+addi t1, zero, 0b110011
+and t2, t0, t1
+OUTS: 5@0x2a 6@0x33 7@0x22
+
+CMDS:
+addi t0, zero, 0b1010
+ori t1, t0, 0b0101
+OUTS: 5@0xa 6@0xf
+
+CMDS:
+addi t0, zero, 0b1111
+andi t1, t0, 0b1010
+OUTS: 5@0xf 6@0xa
+
+CMDS:
+addi t0, zero, 5
+addi t1, zero, 10
+add t2, t0, t1
+OUTS: 5@0x5 6@0xa 7@0xf
+
+CMDS:
+lui s0, 0x1000     
+addi t0, zero, 123
+sd t0, 0(s0)           
+addi t0, zero, 0
+ld t1, 0(s0)  
+OUTS: 6@0x7b 8@0x1000000
+
+CMDS:
+addi t0, zero, 5
+addi t1, zero, 10
+slt t2, t0, t1        
+sub t3, t1, t0            
+beq t2, t3, label
+addi t4, zero, 1         
+label:
+addi t4, zero, 2    
+OUTS: 5@0x5 6@0xa 7@0x1 28@0x5 29@0x2
+
+CMDS:
+addi t0, zero, 3
+addi t1, zero, 4
+sll t2, t0, t1           
+addi t3, zero, -128
+addi t4, zero, 2
+sra t5, t3, t4
+OUTS: 5@0x3 6@0x4 7@0x30 28@0xffffffffffffff80 29@0x2 30@0xffffffffffffffe0
+
+CMDS:
+addi t0, zero, 0x12   
+addi t1, zero, 0x34       
+add t2, t0, t1           
+andi t3, t2, 0x0F          
+ori t4, t3, 0xA0    
+OUTS: 5@0x12 6@0x34 7@0x46 28@0x6 29@0xa6

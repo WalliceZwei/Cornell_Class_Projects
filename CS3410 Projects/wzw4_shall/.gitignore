@@ -1,0 +1,4 @@
+*.o
+/shall
+.idea/
+.vscode/
