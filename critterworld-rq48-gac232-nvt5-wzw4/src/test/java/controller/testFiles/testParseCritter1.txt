@@ -1,0 +1,8 @@
+species: negative memsize
+memsize: -10
+defense: 1
+offense: 86
+size: 32
+energy: 340
+posture: 22
+1 = 1 --> bud;

@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.14'
+}
+
+apply plugin: 'java'
+
+// External repositories where dependencies of your project are found
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/java'
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.7.0'
+    // Explicitly declare the test framework dependency
+}
+
+javafx {
+    version = "21"
+    modules = ['javafx.controls', 'javafx.web', 'javafx.fxml']
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+}
+
+application {
+    mainClass = "src/main/java/MVC/View.java" //TODO
+}
+
+// Console jar for A5
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveBaseName.set('Console')
+    manifest {
+        attributes 'Main-Class': 'console.Console'
+    }
+    from(sourceSets.main.output) {
+        include '**'
+    }
+}
+
+// parse and mutate jar for A4
+tasks.register('parseAndMutateJar', Jar) {
+    archiveBaseName.set('ParseAndMutate')
+    manifest {
+        attributes 'Main-Class': 'main.ParseAndMutateApp'
+    }
+    from(sourceSets.main.output) {
+        include '**'
+    }
+    destinationDirectory.set(layout.buildDirectory.dir('libs'))
+}

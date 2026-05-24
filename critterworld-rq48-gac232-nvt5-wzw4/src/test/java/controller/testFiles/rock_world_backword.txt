@@ -1,0 +1,4 @@
+name rock world
+size 10 10
+rock 0 0
+critter og_critter7.txt 0 2 0

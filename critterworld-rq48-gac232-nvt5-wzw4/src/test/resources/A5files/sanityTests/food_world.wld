@@ -1,0 +1,4 @@
+name food world
+size 10 15
+food 5 5 100
+critter eat_critter.ctr 5 3 0

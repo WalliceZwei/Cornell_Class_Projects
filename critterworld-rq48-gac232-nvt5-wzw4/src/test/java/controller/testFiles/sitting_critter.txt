@@ -1,0 +1,13 @@
+species: sitting critter
+memsize: 10
+defense: 1
+offense: 1
+size: 10
+energy: 3000
+posture: 10
+mem[9] = 1 --> mem[9] := 0 forward;
+mem[4] * 500 - mem[3] < 100 --> bud;
+ahead[1] < -1 --> mem[9] := 1 eat;
+smell / 1000 = 1 and smell mod 10 > 3 --> left;
+smell / 1000 = 1 and smell mod 10 <= 3 --> right;
+1 = 1 --> wait;

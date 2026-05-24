@@ -1,0 +1,13 @@
+species: random critter
+memsize: 49
+defense: 73
+offense: 20
+size: 73
+energy: 236
+posture: 68
+ahead[random[random[-(-(67 + -(18 - ahead[mem[0] / 86])) - 93) + 89 / mem[1]] + mem[0]] - mem[-(94 * 64 + 14) / (40 * 29) * 0]] + 39 >= 81 mod 59 or 5 mod 57 >= 6 - 6 --> mem[15 / 76] := 6 - 59 bud;
+25 * 6 <= 60 + 94 --> mate;
+29 * 6 >= 44 / 41 --> forward;
+41 mod 47 < 64 + 39 --> mem[56 * 17] := 4 + 14 backward;
+57 mod 27 >= 58 / 83 --> mem[31 + 44] := 16 mod 93 backward;
+46 + 45 != 4 + 63 --> backward;

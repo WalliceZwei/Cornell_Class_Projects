@@ -1,0 +1,4 @@
+name empty world
+size 10 15
+critter forward_critter.ctr 4 8 0
+

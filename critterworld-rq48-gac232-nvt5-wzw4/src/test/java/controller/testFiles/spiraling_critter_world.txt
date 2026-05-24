@@ -1,0 +1,3 @@
+name rock world
+size 20 20
+critter spiraling_critter.txt 10 10 0

@@ -1,0 +1,6 @@
+name forager_world
+size 50 100
+
+critter forager.ctr 45 33 5
+critter forager.ctr 28 24 1
+critter forager.ctr 31 73 0

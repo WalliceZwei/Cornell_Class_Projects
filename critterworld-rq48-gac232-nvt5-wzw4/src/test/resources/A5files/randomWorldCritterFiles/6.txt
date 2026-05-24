@@ -1,0 +1,8 @@
+species: random critter
+memsize: 52
+defense: 26
+offense: 89
+size: 35
+energy: 293
+posture: 90
+smell mod 72 - -(ahead[mem[1] + mem[1] mod mem[5]] mod random[nearby[-(-(smell mod mem[0]) - mem[mem[1] mod 38 mod 9 - 22 + 2]) mod 76] / 10 + 70]) > 60 mod 2 --> mate;

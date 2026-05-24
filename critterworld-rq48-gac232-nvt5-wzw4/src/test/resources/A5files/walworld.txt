@@ -1,0 +1,13 @@
+name wallysworld2
+size 6 10
+rock 0 2
+food 0 6 12
+critter budcritter.txt 1 7 0
+critter budcritter.txt 2 4 1
+critter budcritter.txt 2 8 2
+critter budcritter.txt 4 8 3
+critter budcritter.txt 3 5 4
+critter budcritter.txt 5 5 5
+critter budcritter.txt 0 4 3
+critter budcritter.txt 1 5 5
+critter budcritter.txt 5 7 1

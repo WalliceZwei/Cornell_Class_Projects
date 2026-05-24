@@ -1,0 +1,4 @@
+name mate world
+size 10 10
+critter og_critter12.txt 0 0 0
+critter og_critter12.txt 0 2 3

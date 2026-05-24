@@ -1,0 +1,5 @@
+name wally'sworld
+size 6 10
+rock 0 2
+food 0 6 12
+critter space_critter.txt 0 8 2

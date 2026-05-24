@@ -1,0 +1,4 @@
+name grow world
+size 1 1
+
+critter grow_critter.ctr 0 0 0

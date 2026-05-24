@@ -1,0 +1,8 @@
+species: invalid size num
+memsize: 10
+defense: 1
+offense: 86
+energy: 340
+size: 3=2
+posture: 22
+1 = 1 --> bud;

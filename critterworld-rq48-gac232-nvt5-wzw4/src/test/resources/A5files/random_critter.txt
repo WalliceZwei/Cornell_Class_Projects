@@ -1,0 +1,14 @@
+species: random critter
+memsize: 53
+defense: 4
+offense: 24
+size: 59
+energy: 227
+posture: 12
+smell + mem[1] = (ahead[(46 * 73 + 37 mod 76) * 42 + 15] - 33) / 24 and 84 mod 16 >= 81 mod 17 --> mem[20 - 62] := 19 * 8 forward;
+64 + 17 != 39 - 15 --> eat;
+55 / 67 <= 59 mod 47 --> eat;
+99 - 13 > 98 - 16 --> right;
+36 - 6 > 43 - 0 --> eat;
+25 * 41 = 46 + 13 --> mem[21 * 28] := 36 mod 59 bud;
+1 - 25 > 86 + 45 --> eat;

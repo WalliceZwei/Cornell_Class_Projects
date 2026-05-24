@@ -1,0 +1,11 @@
+species: random critter
+memsize: 17
+defense: 17
+offense: 56
+size: 85
+energy: 232
+posture: 0
+mem[0] * (mem[0] * 27) mod 31 / (smell / (random[-(2 - random[mem[nearby[74 / random[mem[3] mod (3 - 92)]] / (31 + 47)] - (96 + 75)]) + 37] / 85) * (5 - 49)) <= 56 mod 21 --> right;
+16 + 86 >= 14 * 37 --> eat;
+42 - 62 <= 96 + 58 --> attack;
+80 + 55 <= 16 - 92 --> attack;

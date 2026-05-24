@@ -1,0 +1,6 @@
+name forager_world
+size 50 100
+
+critter prolific.ctr 45 33 5
+critter prolific.ctr 28 24 1
+critter prolific.ctr 31 73 0

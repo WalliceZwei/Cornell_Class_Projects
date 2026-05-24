@@ -1,0 +1,16 @@
+species: random critter
+memsize: 15
+defense: 89
+offense: 5
+size: 78
+energy: 496
+posture: 16
+-(smell - ahead[16 mod -(mem[2] + -(mem[5] mod mem[6]) mod mem[6])] / (mem[1] + mem[2])) * mem[6] = (mem[0] - mem[6] - mem[3] + (41 - 93)) * (7 - 95) --> grow;
+21 mod 40 != 29 - 61 --> mem[66 - 79] := 97 * 34 wait;
+57 - 78 >= 62 + 78 --> grow;
+50 - 2 != 3 / 18 --> forward;
+59 mod 85 < 83 * 79 --> mate;
+75 + 93 = 64 + 91 --> mem[40 / 80] := 52 mod 25 right;
+99 / 71 > 37 + 18 --> forward;
+97 * 58 <= 34 mod 22 --> wait;
+35 + 31 >= 29 - 27 --> mem[99 / 9] := 36 - 52 mem[50 - 60] := 29 * 90;

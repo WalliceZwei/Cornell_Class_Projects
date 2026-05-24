@@ -1,0 +1,8 @@
+species: attacker
+memsize: 10
+defense: 1
+offense: 100
+size: 100
+energy: 2000
+posture: 17
+1 = 1 --> attack;

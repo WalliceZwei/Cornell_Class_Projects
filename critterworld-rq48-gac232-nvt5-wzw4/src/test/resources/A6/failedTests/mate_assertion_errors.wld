@@ -1,0 +1,5 @@
+name mate
+size 6 10
+
+critter mate_critter.ctr 3 5 3
+critter weak_mate_critter.ctr 3 3 0

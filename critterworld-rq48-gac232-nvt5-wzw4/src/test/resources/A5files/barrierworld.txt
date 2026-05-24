@@ -1,0 +1,5 @@
+name barrierworld
+size 6 10
+critter matecritter.txt 1 1 0
+critter matecritter.txt 1 3 3
+food 1 5 200

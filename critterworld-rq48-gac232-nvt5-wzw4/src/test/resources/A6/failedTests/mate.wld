@@ -1,0 +1,7 @@
+name mate
+size 6 10
+
+critter mate_critter.ctr 3 5 3
+critter killer_critter.ctr 2 2 1
+critter mate_critter.ctr 3 3 0
+// killer critter kills parent before mating happens

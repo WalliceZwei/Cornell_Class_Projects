@@ -1,0 +1,6 @@
+name wallysworld2
+size 6 10
+rock 0 2
+food 0 6 12
+critter attackcritter.txt 2 2 3
+critter attackcritter.txt 2 0 0

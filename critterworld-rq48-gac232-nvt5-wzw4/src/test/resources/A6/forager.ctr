@@ -1,0 +1,16 @@
+species: forager
+memsize: 10
+defense: 1
+offense: 100
+size: 1
+energy: 2000
+posture: 17
+// if there is no food nearby or reaching the food exceeds critters energy wait.
+ping = -1 or ping / 10 * SIZE > ENERGY --> wait;
+// otherwise move, turn or eat depending on the value of ping
+ping = 0 --> eat;
+ping mod 10 = 0 --> forward;
+ping mod 10 = 1 --> left;
+ping mod 10 = 3 --> right;
+ping mod 10 = 2 --> backward;
+

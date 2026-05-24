@@ -1,0 +1,12 @@
+a) The worst case time complexity of the add() method is O(n). Therefore, if there are n calls to the method add() the worst asymptotic time complexity of constructing the bag would be O(n2).
+
+b) (1) n points to a node in the linked list. (2) All nodes from head to n, not including n, do not have an elem equal to x.
+
+ 
+c) When the loop begins, n is equal to head, which is a node in the linked list, therefore part (1) of the invariant is true. While head.elem could be equal to x, part (2) of the invariant states all nodes from head to n except n, therefore even if this was the case the invariant would still hold. Thus, the invariant is established at the beginning of the loop.
+d) Argue that the loop invariant is preserved by each loop iteration. 
+After each iteration, n will only be set equal to n.next if n.elem is not equal to x and if n.next is not null. Thus, we know that n.elem is not equal to x before we set n to n.next, meaning the invariant (2) still holds and all nodes from head to n, except n, do not have an elem equal to x. 
+Not setting n to n.next if n.next is null also ensures that invariant (1) still holds, as n is always pointing to a node in the linked list. 
+After each iteration if n.elem is not equal to x, then n is moved to n.next. 
+
+e) The postcondition says that once the loop exits n must not be null, and n is equal to the first node in the linked list with elem of x or the last node in the list if there is no node with elem of x. Our loop invariant ensures that n is not null as it always points to a node in the linked list, so the first part of our postcondition is satisfied. It also tells us that all nodes from the head to n, not including n, do not have an element equal to x. This combined with where the guard is false when there are no more nodes in the linked list to loop through or we have found a node with elem equal to x tells us that n at the exit of the loop is either the node with elem of x or the last node satisfying the second part of our postcondition. 

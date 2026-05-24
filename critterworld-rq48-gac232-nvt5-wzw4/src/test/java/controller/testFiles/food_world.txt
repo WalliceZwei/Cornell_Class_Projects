@@ -1,0 +1,4 @@
+name food world
+size 10 10
+food 0 2 10
+critter og_critter5.txt 0 0 0

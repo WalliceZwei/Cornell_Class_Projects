@@ -1,0 +1,15 @@
+species: random critter
+memsize: 40
+defense: 68
+offense: 45
+size: 48
+energy: 230
+posture: 21
+(random[smell mod 36] * mem[2] + 11) * (random[ahead[mem[ahead[random[-((17 + (89 - 31)) / (25 - 1)) - 82 + 8] / (78 + 67) * (40 * 43)] mod 16] + 98] / 12 * 79 mod (41 mod 75)] - 38 + 16) != 53 * 66 and 7 mod 82 != 71 - 85 --> forward;
+61 - 32 < 77 - 29 --> mem[84 * 57] := 55 * 99 mate;
+8 + 40 < 12 + 20 --> wait;
+84 / 9 >= 62 + 99 --> mate;
+40 / 74 != 35 - 24 --> wait;
+30 + 98 = 52 - 60 --> forward;
+93 * 66 != 85 * 5 --> backward;
+20 mod 97 = 28 / 35 --> left;

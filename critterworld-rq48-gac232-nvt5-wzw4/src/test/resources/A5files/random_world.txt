@@ -1,0 +1,9 @@
+name random_world
+size 1000 1000
+critter randomWorldCritterFiles/0.txt 515 611 4
+critter randomWorldCritterFiles/1.txt 704 422 3
+critter randomWorldCritterFiles/2.txt 350 118 3
+food 250 148 87
+critter randomWorldCritterFiles/3.txt 187 165 2
+food 935 821 71
+critter randomWorldCritterFiles/4.txt 948 364 2

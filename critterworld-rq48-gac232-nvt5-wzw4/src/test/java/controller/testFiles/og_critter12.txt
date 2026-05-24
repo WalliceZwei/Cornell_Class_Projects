@@ -1,0 +1,9 @@
+species: critter
+memsize: 10
+defense: 1
+offense: 1
+size: 10
+energy: 3000
+posture: 10
+
+mem[0] = 10 --> mate;

@@ -1,0 +1,12 @@
+species: random critter
+memsize: 88
+defense: 26
+offense: 75
+size: 77
+energy: 281
+posture: 83
+{(nearby[ahead[random[(mem[2] - ahead[-(mem[1] mod (random[(73 * 78 * (66 * 70) * 86 - 84) * 48] - 80 * 63 + 54) + 38) - 48] / (38 - 31)) mod (5 + 85) mod 87 * 14] - 56] mod (31 - 82)] + 60 * 5) * 43 = 54 - 47 or 89 / 71 < 13 / 64} and 21 mod 9 != 80 - 56 or 42 / 77 = 57 / 72 --> backward;
+45 / 11 > 13 - 22 --> right;
+42 * 9 != 86 mod 35 --> mate;
+50 - 87 < 16 / 65 --> mem[45 * 87] := 37 / 50 bud;
+79 + 96 != 32 * 81 --> mem[53 - 26] := 93 - 35;

@@ -1,0 +1,9 @@
+species: weak_mate_critter
+memsize: 10
+defense: 1
+offense: 1
+size: 1
+energy: 20
+posture: 17
+1 = 1 --> mate;
+// will die in successful mating, will survive in unsuccessful mating

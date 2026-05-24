@@ -1,0 +1,8 @@
+species: example
+memsize: 10
+defense: 1
+offense: 1
+size: 1
+energy: 200
+posture: 17
+1 = 1 --> eat;

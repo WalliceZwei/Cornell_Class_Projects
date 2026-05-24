@@ -1,0 +1,13 @@
+species: random critter
+memsize: 7
+defense: 44
+offense: 88
+size: 98
+energy: 262
+posture: 8
+{(mem[6] + -(93 / 43 - (mem[4] - (mem[2] - mem[0])) / mem[5] + 30)) * -(mem[mem[4] + 42 - 62] - 3) != 43 - 62 or 96 - 57 > 8 mod 27 or 98 mod 8 = 15 - 94 or 55 mod 80 <= 37 + 66 or 57 - 70 != 74 mod 73} and 1 / 12 < 63 / 13 --> mem[5 mod 98] := 77 - 70 wait;
+69 - 16 <= 34 - 4 --> mem[74 + 64] := 46 / 21 left;
+14 - 51 = 49 mod 70 --> attack;
+82 mod 16 != 53 / 48 --> wait;
+35 * 61 > 96 * 42 --> mem[56 / 42] := 17 - 98;
+20 - 43 < 80 mod 43 --> eat;

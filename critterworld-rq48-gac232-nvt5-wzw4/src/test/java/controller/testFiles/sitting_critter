@@ -1,0 +1,34 @@
+species: sitting critter
+memsize: 10
+defense: 1
+offense: 1
+size: 10
+energy: 3000
+posture: 10
+
+// Check energy for budding condition
+ENERGY >= SIZE * 500 - 100 --> mem[7] := 1;
+
+// Check for food in adjacent hexes, if found, store direction in mem[7]
+nearby[0] < -1 --> mem[7] := 0 mem[9] := 0 mem[10] := 1;
+nearby[1] < -1 --> mem[7] := 1 mem[9] := 1 mem[10] := 1;
+nearby[2] < -1 --> mem[7] := 2 mem[9] := 2 mem[10] := 1;
+nearby[3] < -1 --> mem[7] := 3 mem[9] := 3 mem[10] := 1;
+nearby[4] < -1 --> mem[7] := 4 mem[9] := 4 mem[10] := 1;
+nearby[5] < -1 --> mem[7] := 5 mem[9] := -1 mem[10] := 1; // Left turn
+
+// Bud if energy is near max and no food action is needed
+mem[8] = 1 and mem[10] = 0 --> mem[8] := 0 bud;
+
+// Turn toward food if needed
+mem[9] > 0 --> mem[9] := mem[9] - 1 right;
+mem[9] = -1 --> mem[9] := 0 left;
+
+// Eat if facing food
+mem[10] = 1 and mem[9] = 0 --> eat mem[10] := 0;
+
+// Move forward to where food was located after eating
+mem[10] = 1 --> forward mem[10] := 0;
+
+// Default wait action if no other conditions are met
+1 = 1 --> wait;

@@ -1,0 +1,23 @@
+species: prolific
+memsize: 10
+defense: 1
+offense: 100
+size: 1
+energy: 2000
+posture: 17
+// If you are near your max energy:
+// Bud unless there's something behind you.
+ENERGY > 300 * SIZE and nearby[3] = 0 --> bud;
+
+// Move left if there’s something in front of you
+ENERGY > 300 * SIZE and nearby[0] != 0 --> left;
+
+// Otherwise move forward.
+ENERGY > 300 * SIZE --> forward;
+
+// If you are not near your max energy be a forager and gain weight
+ping = 0 --> eat;
+ping mod 10 = 0 --> forward;
+ping mod 10 = 1 --> left;
+ping mod 10 = 3 --> right;
+ping mod 10 = 2 --> backward;

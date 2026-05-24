@@ -1,0 +1,27 @@
+species: spiraling critter
+memsize: 12
+defense: 1
+offense: 1
+size: 10
+energy: 3000
+posture: 10
+
+
+mem[7] = 0 --> mem[7] := 1 forward;
+mem[7] = 1 --> mem[7] := 2 mem[8] := mem[8] + 1 mem[9] := mem[8] - 1 mem[10] := 10 right;
+
+mem[7] = 2 and mem[9] > 0 --> mem[9] := mem[9] - 1 forward;
+mem[7] = 2 and mem[9] = 0 --> mem[7] := 3;
+
+mem[7] = 3 and mem[10] mod 2 = 0 --> mem[10] := mem[10] - 1 mem[11] := mem[8] right;
+mem[7] = 3 and mem[10] mod 2 = 1 and mem[11] > 0 --> mem[11] := mem[11] - 1 forward;
+mem[7] = 3 and mem[10] mod 2 = 1 and mem[11] = 0 --> mem[10] := mem[10] - 1;
+
+mem[10] = 0 --> mem[8] := mem[8] + 1 mem[7] := 0;
+
+
+
+
+
+
+

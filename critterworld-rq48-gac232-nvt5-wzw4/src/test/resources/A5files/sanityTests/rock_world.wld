@@ -1,0 +1,5 @@
+name rock world
+size 10 15
+rock 2 2
+rock 7 7
+critter forward_critter.ctr 2 4 3

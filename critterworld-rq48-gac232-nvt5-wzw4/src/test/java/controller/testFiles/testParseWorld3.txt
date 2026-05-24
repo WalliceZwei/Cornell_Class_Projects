@@ -1,0 +1,12 @@
+name invalid format
+size 10 10
+rock 9 3
+food 2 6 41
+food 2 2 20
+rokkkkk 4 .2
+food 2 4 13
+food 2 8 34
+rock 3 1
+rock 7 5
+food 6 2 -30
+food 9 5 10
