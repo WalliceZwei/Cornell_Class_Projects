@@ -1,0 +1,66 @@
+commit 5193209c60a26bad8df5d4474b4aaa95175976cb
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Mon Mar 10 12:12:22 2025 -0400
+
+    Added comments, fleshed out the rest of program
+
+commit 2db8b67f561a24eeb690bfb52d7066a72d7a633b
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Mar 7 15:52:44 2025 -0500
+
+    Finished out most of the project
+    
+    - Added the driver function, which can do preview, admit, treat, and quit (maybe a little rough around the edges rn)
+    - Created some new functionality in patient for some getters nad setters of type t
+    - Added some new tests to cover the new functionality
+
+commit f3f650eea0c80f383a37f576fd80f54a86d1b1dc
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Mar 7 11:26:58 2025 -0500
+
+    Refactored the tests to work with the new Tree PQ
+    
+    - Created the test functors to accept both list and tree pq's
+    - Commented the tree up
+
+commit 4ae2068f9dc87c059924a19e8d601318047ff5a2
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 6 19:59:38 2025 -0500
+
+    Added more coverage for bisect
+    
+    - Made sure to cover failures possible due to formatting
+
+commit cbbb0f88bfa6613d77faabbf17cc6249bf418979
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 6 19:46:31 2025 -0500
+
+    Added the Triage Scheduling
+    
+    - Created tests that satisfy the triage scheduling
+    - Created the necessary functions, like the formatting function, to turn a string list list to a t list
+    - Created the priority functions based on disease, still respecting the ties
+
+commit fae67f319009a487715ce3dfc780bdf216e677a3
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 6 18:21:38 2025 -0500
+
+    Finished up the first section on patients
+    
+    - Added the tests required, and loaded the csv in and passed
+    - Completed the first part required of patient
+
+commit 0d79251f53eae27e06f37b96aa30382bb9f1dea0
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 6 15:08:13 2025 -0500
+
+    Comment on the Initial Commit:
+    
+    - Created tests for priorityqueue
+    - Implemented the priority queue, all of the functions
+
+commit 204a1c067ef4e2eff368602eee31e152c8e34f40
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 6 14:57:56 2025 -0500
+
+    Initial commit

@@ -1,0 +1,5 @@
+(test
+ (name test_a3)
+ (deps (glob_files ../data/*))
+ (libraries ounit2 a3 batteries)
+ )

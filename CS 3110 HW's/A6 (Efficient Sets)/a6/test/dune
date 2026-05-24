@@ -1,0 +1,4 @@
+(test
+ (name test_a6)
+ (libraries ounit2 a6 qcheck)
+ )

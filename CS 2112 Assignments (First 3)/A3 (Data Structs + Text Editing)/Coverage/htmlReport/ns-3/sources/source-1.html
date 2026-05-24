@@ -1,0 +1,515 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > HashTable</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">util</a>
+</div>
+
+<h1>Coverage Summary for Class: HashTable (util)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HashTable</td>
+<td class="coverageStat">
+  <span class="percent">
+    72.2%
+  </span>
+  <span class="absValue">
+    (13/18)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.1%
+  </span>
+  <span class="absValue">
+    (32/34)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.7%
+  </span>
+  <span class="absValue">
+    (68/75)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">HashTable$KeySetClass</td>
+<td class="coverageStat">
+  <span class="percent">
+    28.6%
+  </span>
+  <span class="absValue">
+    (4/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (15/25)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    53.1%
+  </span>
+  <span class="absValue">
+    (17/32)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.5%
+  </span>
+  <span class="absValue">
+    (42/44)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83%
+  </span>
+  <span class="absValue">
+    (83/100)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package util;
+&nbsp;
+&nbsp;import java.util.Collection;
+&nbsp;import java.util.Iterator;
+&nbsp;import java.util.Set;
+&nbsp;import java.util.Map;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;/**
+&nbsp; * This hash table uses linked lists for collision handling
+&nbsp; * and dynamically resizes. Keys are unique, and collisions
+&nbsp; * are handled with chaining.
+&nbsp; *
+&nbsp; * Class Invariants:
+&nbsp; * - Keys are unique.
+&nbsp; * - Objects with equal state produce the same hashCode.
+&nbsp; * - The table size dynamically increases when the load factor threshold is exceeded.
+&nbsp; */
+&nbsp;public class HashTable&lt;K, V&gt; implements Map&lt;K, V&gt; {
+&nbsp;    private LinkedList&lt;K,V&gt;[] hashtablearr;
+<b class="fc">&nbsp;    private final double loadFactor = 0.75;</b>
+&nbsp;    private int hashTableSize;
+<b class="fc">&nbsp;    private int numElements = 0;</b>
+&nbsp;    private int emptyBuckets;
+&nbsp;    private K hashKey;
+<b class="fc">&nbsp;    private int collisions = 0;</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the number of empty buckets in the hash table.
+&nbsp;     *
+&nbsp;     * @return the number of empty buckets
+&nbsp;     */
+&nbsp;    public int getEmptyBuckets() {
+<b class="nc">&nbsp;        return emptyBuckets;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the number of collisions encountered during insertions.
+&nbsp;     *
+&nbsp;     * @return the number of collisions
+&nbsp;     */
+&nbsp;    public int getCollisions() {
+<b class="nc">&nbsp;        return collisions;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the current load factor of the hash table.
+&nbsp;     *
+&nbsp;     * @return the load factor
+&nbsp;     */
+&nbsp;    public double getLoadFactor() {
+<b class="nc">&nbsp;        return loadFactor;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructs a new hash table with the specified initial capacity.
+&nbsp;     *
+&nbsp;     * @param tableSize the initial size of the hash table
+&nbsp;     * @throws IllegalArgumentException if tableSize is less than 1
+&nbsp;     */
+<b class="fc">&nbsp;    public HashTable(int tableSize) throws IllegalArgumentException{</b>
+<b class="pc">&nbsp;        if (tableSize &lt; 1){</b>
+<b class="nc">&nbsp;            throw new IllegalArgumentException(&quot;Hash Table has to have size above 0&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.hashTableSize = tableSize;</b>
+<b class="fc">&nbsp;        this.emptyBuckets = tableSize;</b>
+<b class="fc">&nbsp;        hashtablearr = (LinkedList&lt;K,V&gt;[]) new LinkedList[this.hashTableSize];</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Resizes the hash table by doubling its size and rehashing all elements.
+&nbsp;     */
+&nbsp;    private void resizing(){
+<b class="fc">&nbsp;        int oldHashTableSize = hashTableSize;</b>
+<b class="fc">&nbsp;        hashTableSize &lt;&lt;=1;</b>
+<b class="fc">&nbsp;        emptyBuckets = hashTableSize;</b>
+<b class="fc">&nbsp;        LinkedList&lt;K,V&gt;[] hasharr = (LinkedList&lt;K,V&gt;[]) new LinkedList[hashTableSize];</b>
+&nbsp;
+<b class="fc">&nbsp;        for(int x = 0; x&lt;(oldHashTableSize);x++){</b>
+<b class="fc">&nbsp;            if (hashtablearr[x] != null) {</b>
+<b class="fc">&nbsp;                hashtablearr[x].resetTracker();</b>
+<b class="fc">&nbsp;                for (int j = 0; j &lt; hashtablearr[x].size(); j++) {</b>
+<b class="fc">&nbsp;                    hashKey = hashtablearr[x].keyStepper();</b>
+<b class="fc">&nbsp;                    int z = hashCode();</b>
+<b class="fc">&nbsp;                    if (hasharr[z] == null) {</b>
+<b class="fc">&nbsp;                        hasharr[z] = new LinkedList&lt;&gt;();</b>
+<b class="fc">&nbsp;                        emptyBuckets--;</b>
+&nbsp;                    }
+<b class="fc">&nbsp;                    hashTableSize &gt;&gt;= 1;</b>
+<b class="fc">&nbsp;                    hasharr[z].prepend(hashKey, get(hashKey));</b>
+<b class="fc">&nbsp;                    hashTableSize &lt;&lt;= 1;</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        hashtablearr = hasharr;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the FNV1 hash code for the given key, if it is not null.
+&nbsp;     *
+&nbsp;     * @return the hash code of the key
+&nbsp;     * @throws IllegalArgumentException if the key is null
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public int hashCode() throws IllegalArgumentException {
+<b class="pc">&nbsp;        if (hashKey!=null){</b>
+<b class="fc">&nbsp;            int offset = 0x811c9dc5;</b>
+<b class="fc">&nbsp;            int prime = 0x01000193;</b>
+<b class="fc">&nbsp;            int hash = offset;</b>
+<b class="fc">&nbsp;            String h = hashKey.toString();</b>
+<b class="fc">&nbsp;            for(int x = 0; x&lt;h.length();x++){</b>
+<b class="fc">&nbsp;                hash^=h.charAt(x);</b>
+<b class="fc">&nbsp;                hash *= prime;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            return (hash% hashTableSize + hashTableSize)% hashTableSize;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        throw new IllegalArgumentException(&quot;No hash key given to hash&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the number of key-value pairs in the hash table.
+&nbsp;     *
+&nbsp;     * @return the size of the hash table
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public int size() {
+<b class="fc">&nbsp;        return numElements;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the hash table is empty.
+&nbsp;     *
+&nbsp;     * @return true if the hash table is empty
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public boolean isEmpty() {
+<b class="fc">&nbsp;        return numElements == 0;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the hash table contains the specified key.
+&nbsp;     *
+&nbsp;     * @param key the key to check
+&nbsp;     * @return true if the hash table contains the specified key
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public boolean containsKey(Object key) {
+<b class="fc">&nbsp;        hashKey = (K) key;</b>
+<b class="fc">&nbsp;        if (hashtablearr[hashCode()] == null){return false;}</b>
+<b class="fc">&nbsp;        return hashtablearr[hashCode()].containsKey(hashKey);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the hash table contains the specified value.
+&nbsp;     *
+&nbsp;     * @param value the value to be checked
+&nbsp;     * @return true if the hash table contains the specified value
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public boolean containsValue(Object value) {
+<b class="fc">&nbsp;        for(int x = 0; x &lt; hashtablearr.length;x++){</b>
+<b class="fc">&nbsp;            if (hashtablearr[x] != null) {</b>
+<b class="fc">&nbsp;                if (hashtablearr[x].contains((V) value)) {</b>
+<b class="fc">&nbsp;                    return true;</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the value associated with the specified key.
+&nbsp;     *
+&nbsp;     * @param key the key whose associated value is to be returned
+&nbsp;     * @return the value associated with the key, or null if the key is not in the hashtable
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public V get(Object key) {
+<b class="fc">&nbsp;        hashKey = (K)key;</b>
+<b class="fc">&nbsp;        if (hashtablearr[hashCode()] == null){return null;}</b>
+<b class="fc">&nbsp;        return hashtablearr[hashCode()].getKeyValue(hashKey);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Puts a key with a value into the hash table
+&nbsp;     *
+&nbsp;     * @param key the key to put
+&nbsp;     * @param value the value to be associated with the key
+&nbsp;     * @return the previous value associated with the key, or null if the key wasn&#39;t mapped before
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public V put(K key, V value) {
+<b class="fc">&nbsp;        if (containsKey(key)){</b>
+<b class="fc">&nbsp;            return hashtablearr[hashCode()].changeKeyValue(key,value);</b>
+&nbsp;        }
+&nbsp;        else {
+<b class="fc">&nbsp;            if (hashtablearr[hashCode()] == null) {</b>
+<b class="fc">&nbsp;                hashtablearr[hashCode()] = new LinkedList&lt;&gt;();</b>
+<b class="fc">&nbsp;                emptyBuckets--;</b>
+&nbsp;            }
+&nbsp;            else{
+<b class="fc">&nbsp;                collisions++;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            hashtablearr[hashCode()].prepend(key,value);</b>
+<b class="fc">&nbsp;            numElements++;</b>
+<b class="fc">&nbsp;            if (numElements &gt;= loadFactor * hashTableSize){</b>
+<b class="fc">&nbsp;                resizing();</b>
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Deletes key and value from hashtable
+&nbsp;     *
+&nbsp;     * @param key the key to remove
+&nbsp;     * @return the previous value of the key, or null if the key was not in the table before
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public V remove(Object key) {
+<b class="fc">&nbsp;        if (containsKey(key)){</b>
+<b class="fc">&nbsp;            numElements--;</b>
+<b class="fc">&nbsp;            return hashtablearr[hashCode()].remove((K)key);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Copies all mappings from a map to the hash table.
+&nbsp;     *
+&nbsp;     * @param m the map
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public void putAll(Map&lt;? extends K, ? extends V&gt; m) {
+<b class="fc">&nbsp;        for(Object key : m.keySet().toArray()){</b>
+<b class="fc">&nbsp;            put((K)key,m.get((K)key));</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Removes all mappings from the hash table.
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public void clear() {
+<b class="fc">&nbsp;        numElements = 0;</b>
+<b class="fc">&nbsp;        hashtablearr = (LinkedList&lt;K,V&gt;[]) new LinkedList[this.hashTableSize];</b>
+<b class="fc">&nbsp;        emptyBuckets = this.hashTableSize;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @return a new keyset object with the hash table keys
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public Set&lt;K&gt; keySet() {
+<b class="fc">&nbsp;        return new KeySetClass&lt;&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /*
+&nbsp;     * You are not required to implement the values() or entrySet() operations.
+&nbsp;     */
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Collection&lt;V&gt; values() {
+<b class="nc">&nbsp;        throw new UnsupportedOperationException();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet() {
+<b class="nc">&nbsp;        throw new UnsupportedOperationException();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    private class KeySetClass&lt;K&gt; implements Set &lt;K&gt;{</b>
+&nbsp;
+&nbsp;        // Class Invariants: all keys in the hash table are mapped to the keyset
+&nbsp;        // All keys must be unique
+&nbsp;
+&nbsp;        public int size(){
+<b class="fc">&nbsp;            return HashTable.this.size();</b>
+&nbsp;        }
+&nbsp;        public boolean isEmpty(){
+<b class="nc">&nbsp;            return HashTable.this.size() == 0;</b>
+&nbsp;        }
+&nbsp;        public boolean contains(Object xi){
+<b class="fc">&nbsp;            return containsKey(xi);</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        public Object[] toArray() {
+<b class="fc">&nbsp;            int tracker = 0;</b>
+<b class="fc">&nbsp;            Object[] keySet = new Object[numElements];</b>
+<b class="fc">&nbsp;            for(int x = 0; x&lt;(hashTableSize); x++){</b>
+<b class="fc">&nbsp;                if (hashtablearr[x]!=null){</b>
+<b class="fc">&nbsp;                    hashtablearr[x].resetTracker();</b>
+&nbsp;                }
+&nbsp;            }
+<b class="fc">&nbsp;            for(int x = 0; x&lt;(hashTableSize); x++){ // halve the sizehashtable here to accoutn for original size</b>
+&nbsp;                // account for the fact that key might have been erased
+<b class="fc">&nbsp;                if (hashtablearr[x] != null) {</b>
+<b class="fc">&nbsp;                    for (int j = 0; j &lt; hashtablearr[x].size(); j++) {</b>
+<b class="fc">&nbsp;                        hashKey = hashtablearr[x].keyStepper();</b>
+<b class="fc">&nbsp;                        keySet[tracker] = hashKey;</b>
+<b class="fc">&nbsp;                        tracker++;</b>
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            }
+<b class="fc">&nbsp;            return keySet;</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public Iterator&lt;K&gt; iterator(){
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public &lt;T&gt; T[] toArray(T[] a) {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public boolean add(K k) {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public boolean remove(Object o) {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public boolean containsAll(Collection&lt;?&gt; c) {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public boolean addAll(Collection&lt;? extends K&gt; c) {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public boolean retainAll(Collection&lt;?&gt; c) {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public boolean removeAll(Collection&lt;?&gt; c) {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;        @Override
+&nbsp;        public void clear() {
+<b class="nc">&nbsp;            throw new UnsupportedOperationException();</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-10-10 23:37</div>
+</div>
+</body>
+</html>

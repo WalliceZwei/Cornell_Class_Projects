@@ -1,0 +1,12 @@
+---
+:id: 307183371
+:submitters:
+- :name: Wallace Wei
+  :email: wzw4@cornell.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2025-02-11 04:31:24.345590000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2025-02-10 20:31:24.345590000 Z
+:status: processed
+:score: 90.0

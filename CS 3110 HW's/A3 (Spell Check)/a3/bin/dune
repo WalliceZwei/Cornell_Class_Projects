@@ -1,0 +1,6 @@
+(executable
+ (public_name a3)
+ (name main)
+ (libraries a3 batteries str)
+
+ )

@@ -1,0 +1,351 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > LinkedList</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">util</a>
+</div>
+
+<h1>Coverage Summary for Class: LinkedList (util)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LinkedList</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    82.5%
+  </span>
+  <span class="absValue">
+    (33/40)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.8%
+  </span>
+  <span class="absValue">
+    (67/73)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package util;
+&nbsp;
+&nbsp;/**
+&nbsp; * A node in the linked list that holds a key-value pair.
+&nbsp; *
+&nbsp; * @param &lt;A&gt; the type of the key
+&nbsp; * @param &lt;B&gt; the type of the value
+&nbsp; */
+&nbsp;class Node&lt;A, B&gt;{
+&nbsp;    A key;
+&nbsp;    B value;
+&nbsp;    Node&lt;A, B&gt; next;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructs a new node with the given key, value, and next node reference.
+&nbsp;     *
+&nbsp;     * @param key the key associated with this node
+&nbsp;     * @param value the value associated with this node
+&nbsp;     * @param next the next node in the list
+&nbsp;     */
+&nbsp;    Node(A key, B value, Node&lt;A, B&gt; next){
+&nbsp;        this.key = key;
+&nbsp;
+&nbsp;        this.value = value;
+&nbsp;        this.next = next;
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * Linked list that stores key-value pairs.
+&nbsp; * The list supports appending, prepending, and searching for keys and values.
+&nbsp; *
+&nbsp; * @param &lt;K&gt; the type of the key
+&nbsp; * @param &lt;V&gt; the type of the value
+&nbsp; */
+&nbsp;public class LinkedList &lt;K,V&gt; {
+&nbsp;
+&nbsp;    // Class Invariants: K,V are subclasses of Object, Null next node indicates the end of the list, Tail Object has a Null next node
+&nbsp;    // data is contained in the key and value, next is the next &quot;linked&quot; node, which can&#39;t just be itself
+&nbsp;    // null is the default value
+&nbsp;
+<b class="fc">&nbsp;    private int sizelist = 0;</b>
+<b class="fc">&nbsp;    private Node&lt;K, V&gt; head = null;</b>
+<b class="fc">&nbsp;    private Node&lt;K, V&gt; tail = null;</b>
+<b class="fc">&nbsp;    private Node&lt;K, V&gt; tracker1 = head;</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructs an empty linked list.
+&nbsp;     */
+<b class="fc">&nbsp;    public LinkedList() {</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns whether the linked list is empty.
+&nbsp;     *
+&nbsp;     * @return {@code true} if the list is empty, {@code false} otherwise
+&nbsp;     */
+&nbsp;    public boolean isEmpty() {
+<b class="fc">&nbsp;        return sizelist == 0;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the size of the linked list.
+&nbsp;     *
+&nbsp;     * @return the number of elements in the list
+&nbsp;     */
+&nbsp;    public int size() {
+<b class="fc">&nbsp;        return sizelist;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Appends a new node with the specified key and value to the end of the list.
+&nbsp;     *
+&nbsp;     * @param key the key of the new node
+&nbsp;     * @param value the value of the new node
+&nbsp;     */
+&nbsp;    public void append(K key, V value) {
+<b class="fc">&nbsp;        Node&lt;K, V&gt; newob = new Node&lt;&gt;(key, value, null);</b>
+<b class="pc">&nbsp;        if (isEmpty()) {</b>
+<b class="nc">&nbsp;            this.head = newob;</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            this.tail.next = newob;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        this.tail = newob;</b>
+<b class="fc">&nbsp;        sizelist++;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Resets the internal tracker used for stepping through the keys in the list.
+&nbsp;     */
+&nbsp;    public void resetTracker() {
+<b class="fc">&nbsp;        tracker1 = head;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the next key in the list and advances the internal tracker.
+&nbsp;     *
+&nbsp;     * @return the next key in the list
+&nbsp;     */
+&nbsp;    public K keyStepper() {
+<b class="fc">&nbsp;        K key = tracker1.key;</b>
+<b class="fc">&nbsp;        tracker1 = tracker1.next;</b>
+<b class="fc">&nbsp;        return key;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Prepends a new node with the specified key and value to the start of the list.
+&nbsp;     *
+&nbsp;     * @param key the key of the new node
+&nbsp;     * @param value the value of the new node
+&nbsp;     */
+&nbsp;    public void prepend(K key, V value) {
+<b class="fc">&nbsp;        Node&lt;K, V&gt; h = new Node&lt;&gt;(key, value, head);</b>
+<b class="fc">&nbsp;        head = h;</b>
+<b class="fc">&nbsp;        if (isEmpty()) {</b>
+<b class="fc">&nbsp;            tail = h;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        sizelist++;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the linked list contains a node with the specified value.
+&nbsp;     *
+&nbsp;     * @param valueRef the value to search for
+&nbsp;     * @return {@code true} if the list contains the value, {@code false} otherwise
+&nbsp;     */
+&nbsp;    public boolean contains(V valueRef) {
+<b class="pc">&nbsp;        if (isEmpty()) {</b>
+<b class="nc">&nbsp;            return false;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        Node&lt;K, V&gt; tracker = head;</b>
+<b class="fc">&nbsp;        while (tracker != null) {</b>
+<b class="fc">&nbsp;            if (tracker.value.equals(valueRef)) {</b>
+<b class="fc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            tracker = tracker.next;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Checks if the linked list contains a node with the specified key.
+&nbsp;     *
+&nbsp;     * @param keyRef the key to search for
+&nbsp;     * @return {@code true} if the list contains the key, {@code false} otherwise
+&nbsp;     */
+&nbsp;    public boolean containsKey(K keyRef) {
+<b class="pc">&nbsp;        if (keyRef == null) {</b>
+<b class="nc">&nbsp;            return false;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        Node&lt;K, V&gt; tracker = head;</b>
+<b class="fc">&nbsp;        while (tracker != null) {</b>
+<b class="fc">&nbsp;            if (tracker.key.equals(keyRef)) {</b>
+<b class="fc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            tracker = tracker.next;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Returns the value associated with the specified key.
+&nbsp;     *
+&nbsp;     * @param keyRef the key to search for
+&nbsp;     * @return the value associated with the key, or {@code null} if the key is not found
+&nbsp;     */
+&nbsp;    public V getKeyValue(K keyRef) {
+<b class="fc">&nbsp;        if (isEmpty()) {</b>
+<b class="fc">&nbsp;            return null;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        Node&lt;K, V&gt; tracker = head;</b>
+<b class="fc">&nbsp;        while (tracker != null) {</b>
+<b class="fc">&nbsp;            if (tracker.key.equals(keyRef)) {</b>
+<b class="fc">&nbsp;                return tracker.value;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            tracker = tracker.next;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Changes the value associated with the specified key.
+&nbsp;     *
+&nbsp;     * @param keyRef the key whose value is to be updated
+&nbsp;     * @param value the new value to associate with the key
+&nbsp;     * @return the updated value, or {@code null} if the key is not found
+&nbsp;     */
+&nbsp;    public V changeKeyValue(K keyRef, V value) {
+<b class="pc">&nbsp;        if (isEmpty()) {</b>
+<b class="nc">&nbsp;            return null;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        Node&lt;K, V&gt; tracker = head;</b>
+<b class="pc">&nbsp;        while (tracker != null) {</b>
+<b class="pc">&nbsp;            if (tracker.key.equals(keyRef)) {</b>
+<b class="fc">&nbsp;                tracker.value = value;</b>
+<b class="fc">&nbsp;                return value;</b>
+&nbsp;            }
+<b class="nc">&nbsp;            tracker = tracker.next;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Removes the first node with the specified key from the list.
+&nbsp;     *
+&nbsp;     * @param key the key of the node to remove
+&nbsp;     * @return the value of the removed node, or {@code null} if the key is not found
+&nbsp;     */
+&nbsp;    public V remove(K key) {
+<b class="pc">&nbsp;        if (!isEmpty()) {</b>
+<b class="fc">&nbsp;            Node&lt;K, V&gt; tracker = head;</b>
+<b class="fc">&nbsp;            Node&lt;K, V&gt; behindtracker = null;</b>
+<b class="fc">&nbsp;            while (tracker != null) {</b>
+<b class="fc">&nbsp;                if (tracker.key.equals(key)) {</b>
+<b class="fc">&nbsp;                    if (tracker == head) {</b>
+<b class="fc">&nbsp;                        head = tracker.next;</b>
+<b class="fc">&nbsp;                        if (sizelist == 1) {</b>
+<b class="fc">&nbsp;                            tail = null;</b>
+&nbsp;                        }
+<b class="fc">&nbsp;                    } else if (tracker == tail) {</b>
+<b class="fc">&nbsp;                        tail = behindtracker;</b>
+<b class="fc">&nbsp;                        tail.next = null;</b>
+&nbsp;                    } else {
+<b class="fc">&nbsp;                        behindtracker.next = tracker.next;</b>
+&nbsp;                    }
+<b class="fc">&nbsp;                    sizelist--;</b>
+<b class="fc">&nbsp;                    return tracker.value;</b>
+&nbsp;                }
+<b class="fc">&nbsp;                behindtracker = tracker;</b>
+<b class="fc">&nbsp;                tracker = tracker.next;</b>
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-10-10 23:37</div>
+</div>
+</body>
+</html>

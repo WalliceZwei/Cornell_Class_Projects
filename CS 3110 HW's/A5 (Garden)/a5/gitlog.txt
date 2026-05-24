@@ -1,0 +1,45 @@
+commit 7569928545e10a74e8db1bae45da9388358513bc
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Mon Mar 24 22:52:37 2025 -0400
+
+    Finish up the proof, the design doc, and polished the visualizations
+    
+    - Finished design doc
+    - Finished proof, polished it up
+    - Cleaned up visualizaition and implementation
+
+commit cb8b080c1de3a2a99e00066612a5836ac3a2dcb0
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Sat Mar 22 00:14:50 2025 -0400
+
+    Tests&documentation added
+    
+    - Tests added for QCheck and normal property tests, with good coverage
+    - Final documentation added to make functionality clear
+
+commit 330005826ea59c415b4393fd28ccccb4c6a4a316
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Mar 21 12:20:55 2025 -0400
+
+    Basically done on the simulation
+    
+    - Added proper stepping functonality, array iterating
+    - Added the groundwork needed to test
+    - Completed most of the driver program
+
+commit 54d633f8f1b9cc4a3fa9ed57226d34085d0e22ea
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 20 20:20:44 2025 -0400
+
+    Started some basic writing of code for the garden and plant
+    
+    - Refined the plants module and functions for it
+    - Started the garden modules and functions for it
+
+commit c787bdcd42743b969be29c90f1abcf8b7fa7a87d
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Wed Mar 19 14:32:01 2025 -0400
+
+    Initial commit
+    
+    - .mli's created with some functions

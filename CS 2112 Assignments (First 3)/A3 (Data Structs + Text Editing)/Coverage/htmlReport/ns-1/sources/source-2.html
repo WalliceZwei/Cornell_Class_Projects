@@ -1,0 +1,296 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > EditorModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">editor</a>
+</div>
+
+<h1>Coverage Summary for Class: EditorModel (editor)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EditorModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/44)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/97)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package editor;
+&nbsp;
+&nbsp;import java.io.BufferedReader;
+&nbsp;import java.io.File;
+&nbsp;import java.io.FileReader;
+&nbsp;import java.io.IOException;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;import modules.AutoCompleteModule;
+&nbsp;import modules.ModuleFactory;
+&nbsp;import modules.SearchModule;
+&nbsp;import modules.SpellCheckModule;
+&nbsp;
+&nbsp;public class EditorModel {
+&nbsp;
+&nbsp;    private final AutoCompleteModule autoComplete;
+&nbsp;    private final SpellCheckModule spellCheck;
+&nbsp;    private final SearchModule search;
+&nbsp;    private long spellCheckTime;
+&nbsp;
+<b class="nc">&nbsp;    public EditorModel() {</b>
+<b class="nc">&nbsp;        autoComplete = ModuleFactory.getAutoComplete();</b>
+<b class="nc">&nbsp;        spellCheck = ModuleFactory.getSpellCheck();</b>
+<b class="nc">&nbsp;        search = ModuleFactory.getSearchModule();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean loadDictionary(File dict) {
+<b class="nc">&nbsp;        if (dict == null) return false;</b>
+&nbsp;
+<b class="nc">&nbsp;        try (BufferedReader br = new BufferedReader(new FileReader(dict))) {</b>
+<b class="nc">&nbsp;            for (String line; (line = br.readLine()) != null; ) {</b>
+<b class="nc">&nbsp;                autoComplete.addWord(line);</b>
+<b class="nc">&nbsp;                spellCheck.addWord(line);</b>
+&nbsp;            }
+<b class="nc">&nbsp;        } catch (IOException ioe) {</b>
+<b class="nc">&nbsp;            System.err.println(&quot;Error reading provided dictionary file.&quot;);</b>
+<b class="nc">&nbsp;            return false;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String spellCheck(String markupText) {
+<b class="nc">&nbsp;        String plainText = toPlainText(markupText);</b>
+<b class="nc">&nbsp;        String preamble = markupText.substring(0, firstIndexOfBody(markupText));</b>
+<b class="nc">&nbsp;        String conclusion = markupText.substring(lastIndexOfBody(markupText) + 1);</b>
+<b class="nc">&nbsp;        StringBuilder sb = new StringBuilder();</b>
+<b class="nc">&nbsp;        sb.append(preamble);</b>
+<b class="nc">&nbsp;        long start = System.nanoTime();</b>
+<b class="nc">&nbsp;        for (String word : plainText.split(&quot;\\s+&quot;)) {</b>
+<b class="nc">&nbsp;            if (!spellCheck.isValidWord(word.toLowerCase().replaceAll(&quot;[^\\w]&quot;, &quot;&quot;))) {</b>
+<b class="nc">&nbsp;                sb.append(&quot;&lt;u&gt;&lt;font color=\&quot;red\&quot;&gt;&quot;);</b>
+<b class="nc">&nbsp;                sb.append(word);</b>
+<b class="nc">&nbsp;                sb.append(&quot;&lt;/font&gt;&lt;/u&gt; &quot;);</b>
+&nbsp;            } else {
+<b class="nc">&nbsp;                sb.append(word);</b>
+<b class="nc">&nbsp;                sb.append(&quot; &quot;);</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        spellCheckTime = (System.nanoTime() - start) / 1000;</b>
+<b class="nc">&nbsp;        sb.append(conclusion);</b>
+<b class="nc">&nbsp;        return sb.toString();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public long getSpellCheckTime() {
+<b class="nc">&nbsp;        return spellCheckTime;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String autocomplete(String markupText) {
+<b class="nc">&nbsp;        int startIndex =</b>
+<b class="nc">&nbsp;                Math.max(</b>
+<b class="nc">&nbsp;                        Math.max(markupText.lastIndexOf(&#39; &#39;) + 1, firstIndexOfBody(markupText)),</b>
+<b class="nc">&nbsp;                        markupText.lastIndexOf(&quot;&amp;nbsp;&quot;) + 6);</b>
+<b class="nc">&nbsp;        String pref =</b>
+<b class="nc">&nbsp;                toPlainText(markupText.substring(startIndex, lastIndexOfBody(markupText) + 1));</b>
+<b class="nc">&nbsp;        return autoComplete.getWordForPrefix(pref);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String search(String query, String markupText) {
+&nbsp;        // clear formatting before we start
+<b class="nc">&nbsp;        markupText = clearFormatting(markupText);</b>
+<b class="nc">&nbsp;        if (markupText.length() == 0 || query.length() == 0) {</b>
+<b class="nc">&nbsp;            return markupText;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        List&lt;String&gt; tags = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        List&lt;String&gt; searchText = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        StringBuilder curr = new StringBuilder();</b>
+&nbsp;        // we start with text, even though the first element is probably &#39;&lt;&#39;
+<b class="nc">&nbsp;        int tagCount = 0;</b>
+<b class="nc">&nbsp;        for (int i = 0; i &lt; markupText.length(); i++) {</b>
+<b class="nc">&nbsp;            char c = markupText.charAt(i);</b>
+<b class="nc">&nbsp;            if (c == &#39;&lt;&#39;) {</b>
+<b class="nc">&nbsp;                if (tagCount == 0) {</b>
+<b class="nc">&nbsp;                    searchText.add(curr.toString());</b>
+&nbsp;                    // clear sb
+<b class="nc">&nbsp;                    curr.setLength(0);</b>
+&nbsp;                }
+<b class="nc">&nbsp;                curr.append(&#39;&lt;&#39;);</b>
+<b class="nc">&nbsp;                tagCount++;</b>
+<b class="nc">&nbsp;            } else if (c == &#39;&gt;&#39;) {</b>
+<b class="nc">&nbsp;                curr.append(&#39;&gt;&#39;);</b>
+<b class="nc">&nbsp;                tagCount--;</b>
+<b class="nc">&nbsp;                if (tagCount == 0) {</b>
+<b class="nc">&nbsp;                    tags.add(curr.toString());</b>
+<b class="nc">&nbsp;                    curr.setLength(0);</b>
+&nbsp;                }
+&nbsp;            } else {
+<b class="nc">&nbsp;                curr.append(c);</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        if (tagCount == 0) {</b>
+<b class="nc">&nbsp;            searchText.add(curr.toString());</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;            tags.add(curr.toString());</b>
+&nbsp;        }
+<b class="nc">&nbsp;        StringBuilder res = new StringBuilder();</b>
+&nbsp;        // keep track of whether we&#39;ve added any text, to make sure we put a
+&nbsp;        // space before the very first element of the body (other things rely on
+&nbsp;        // that assumption)
+<b class="nc">&nbsp;        boolean addedText = false;</b>
+&nbsp;        // keep track of whether we&#39;ve found and highlighted the first instance
+&nbsp;        // of the query
+<b class="nc">&nbsp;        boolean foundQuery = false;</b>
+<b class="nc">&nbsp;        for (int idx = 0; idx &lt; searchText.size(); idx++) {</b>
+<b class="nc">&nbsp;            String text = searchText.get(idx);</b>
+<b class="nc">&nbsp;            if (!foundQuery) {</b>
+&nbsp;                // only search if we haven&#39;t yet found the query
+<b class="nc">&nbsp;                int searchIdx = search.find(query, text);</b>
+<b class="nc">&nbsp;                if (searchIdx != -1) {</b>
+<b class="nc">&nbsp;                    foundQuery = true;</b>
+<b class="nc">&nbsp;                    res.append(text.substring(0, searchIdx));</b>
+<b class="nc">&nbsp;                    if (searchIdx == 0 &amp;&amp; !addedText) {</b>
+<b class="nc">&nbsp;                        res.append(&#39; &#39;);</b>
+&nbsp;                    }
+<b class="nc">&nbsp;                    res.append(&quot;&lt;u&gt;&lt;font color=\&quot;blue\&quot;&gt;&quot;);</b>
+<b class="nc">&nbsp;                    res.append(text.substring(searchIdx, searchIdx + query.length()));</b>
+<b class="nc">&nbsp;                    res.append(&quot;&lt;/font&gt;&lt;/u&gt;&quot;);</b>
+<b class="nc">&nbsp;                    res.append(text.substring(searchIdx + query.length()));</b>
+&nbsp;                } else {
+&nbsp;                    // if we can&#39;t find the query in the text, just append
+<b class="nc">&nbsp;                    res.append(text);</b>
+&nbsp;                }
+&nbsp;            } else {
+&nbsp;                // if we&#39;ve already found the query, just append
+<b class="nc">&nbsp;                res.append(text);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            if (text.length() &gt; 0) {</b>
+<b class="nc">&nbsp;                addedText = true;</b>
+&nbsp;            }
+<b class="nc">&nbsp;            if (idx &lt; tags.size()) {</b>
+<b class="nc">&nbsp;                res.append(tags.get(idx));</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return res.toString();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String clearFormatting(String markupText) {
+<b class="nc">&nbsp;        return markupText</b>
+<b class="nc">&nbsp;                .replaceAll(&quot;&lt;u&gt;&lt;font color=\&quot;(red|blue)\&quot;&gt;&quot;, &quot;&quot;)</b>
+<b class="nc">&nbsp;                .replaceAll(&quot;&lt;/font&gt;&lt;/u&gt;&quot;, &quot;&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private String toPlainText(String markupText) {
+<b class="nc">&nbsp;        return markupText.replaceAll(&quot;&lt;p&gt;&quot;, &quot; &quot;).replaceAll(&quot;&lt;[^&gt;]+&gt;&quot;, &quot;&quot;).replace(&quot;&amp;nbsp;&quot;, &quot;&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private int firstIndexOfBody(String markupText) {
+<b class="nc">&nbsp;        int index = 0;</b>
+<b class="nc">&nbsp;        int max = lastIndexOfBody(markupText);</b>
+<b class="nc">&nbsp;        while (index &lt; max - 1 &amp;&amp; markupText.charAt(index) == &#39;&lt;&#39;) {</b>
+<b class="nc">&nbsp;            index++;</b>
+<b class="nc">&nbsp;            while (markupText.charAt(index) != &#39;&gt;&#39;) index++;</b>
+<b class="nc">&nbsp;            index++;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return index;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private int lastIndexOfBody(String markupText) {
+<b class="nc">&nbsp;        return markupText.lastIndexOf(&quot;&lt;/body&gt;&quot;) - 1;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-10-10 23:37</div>
+</div>
+</body>
+</html>

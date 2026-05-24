@@ -1,0 +1,5 @@
+This deletion on line 110 won't affect the correctness of the method scaleBy, because if you scale by 0, all the coefficients will be 0 in the coefficient array will be 0. 
+
+scaleBy will return the Polynomial's create method, and when all the coefficients are 0, this will lead to it deleting all of those coefficients because they are trailing zeroes to enforce the class invariant. 
+
+Therefor, .create() will return a "new Polynomial()" with an empty coefficient list, just like how "theZero" works on line 110.

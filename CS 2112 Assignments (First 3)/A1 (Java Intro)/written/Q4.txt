@@ -1,0 +1,11 @@
+Using the former test is preferable because it is more impervious to all user inputs.
+
+If the user doesn't type yes or no, but types an integer, blank space, or some random string or such, then the former doesn't automatically go through with the process of overwriting the file, and just returns to avoid doing so. 
+
+This contrasts with the latter, which overwrites the file if they find *any* output that isn't "no", which too easily leads to errors. 
+
+Generally, when overwriting a file, you want to be sure that the user wants to do such an action, which can only be done if they type "yes", and if otherwise, don't go through with it, because it may be permanent and is a damaging action. 
+
+Former: if (!sysin.nextLine().equals("yes")) return;
+
+Latter: if (sysin.nextLine().equals("no")) return;

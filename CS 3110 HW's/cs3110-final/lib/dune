@@ -1,0 +1,5 @@
+(library
+ (name final)
+ (libraries raylib raygui)
+ (instrumentation
+  (backend bisect_ppx)))

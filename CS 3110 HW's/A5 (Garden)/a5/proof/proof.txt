@@ -1,0 +1,50 @@
+Proposition:  int_of_bin (inc b) = 1 + int_of_bin b
+
+Theorem: for all b : bin, int_of_bin (inc b) = 1 + int_of_bin b
+
+(Z = 0 in this case)
+
+Base Case: b=Z; int_of_bin (inc b) = 1 + int_of_bin b
+
+int_of_bin (inc Z)
+int_of_bin (B1 Z)
+1 + (2 * int_of_bin Z)
+1 + (2*0) = 1
+
+1 + int_of_bin Z = 1 + 0 = 1
+
+Two Other Cases While Inducting:
+
+B0 b 
+
+Assume by the Inductive Hypothesis that P(b) is true, int_of_bin (inc b) = 1 + int_of_bin b
+
+Then we know that for 
+int_of_bin (inc B0 b) = 1 + int_of_bin B0 b, that
+
+(by function evaluations) int_of_bin (inc B0 b) = int_of_bin (B1 b) → 1 + (2 * int_of_bin b)
+
+(by function evaluations) 1 + int_of_bin B0 b → 1 + (2 * int_of_bin b)
+
+These are the same, so done
+
+B1 b
+
+Assume by the Inductive Hypothesis that P(b) is true, int_of_bin (inc b) = 1 + int_of_bin b
+
+Then we know that for 
+int_of_bin (inc B1 b) = 1 + int_of_bin B1 b
+
+That by the function evaluation, inc B1 b = B0 (inc b)
+
+int_of_bin (B0 (inc b)) matches the B0 b case, which evaluates to 2*int_of_bin(inc b)
+
+We know that int_of_bin B1 b evaluates to 1 + (2 * int_of_bin b) 
+
+1 + 1 + (2 * int_of_bin b)  = 2 + (2 * int_of_bin b)
+
+But we also know that 2*int_of_bin(inc b) = 2*int_of_bin(b) + 2
+
+This happens to be the same as the other equation, which proves the theorem
+
+Since P(Z), P(B0 b), and P(B1 b) hold, by structural induction, for all b : bin, int_of_bin (inc b) = 1 + int_of_bin b.

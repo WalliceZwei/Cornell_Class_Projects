@@ -1,0 +1,3 @@
+employee := load "data/g2.csv";
+department := load "data/l2.csv";
+print (join employee with department on "Department ID");

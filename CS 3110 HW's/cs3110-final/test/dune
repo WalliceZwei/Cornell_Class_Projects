@@ -1,0 +1,4 @@
+(tests
+ (names test_final test_pred test_food test_hungry test_repro test_simparams)
+ (libraries ounit2 final)
+ (deps (glob_files_rec ../data/*)))

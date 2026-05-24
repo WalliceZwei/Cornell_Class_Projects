@@ -1,0 +1,9 @@
+(library
+ (name a8)
+ (libraries csv))
+
+(menhir
+ (modules parser)
+ (flags --strict --no-dollars))
+
+(ocamllex lexer)

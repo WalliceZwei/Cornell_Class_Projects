@@ -1,0 +1,3 @@
+grades := load "data/g1.csv";
+labs := load "data/l1.csv";
+print join grades with labs on "ID";

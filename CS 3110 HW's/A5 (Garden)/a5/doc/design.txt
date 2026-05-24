@@ -1,0 +1,29 @@
+Since the individual plants tend to not last very long, the plant generations are coded as: 
+
+(Starting with generation one) 
+
+Generations 1-9 are represented as numbers from 1 to 9
+
+Any generation higher, from generations 10 and up, are just represented by the letter “O”
+
+This game is dictated by randomly spawning in some plants, somewhere in the range of 20 percent being initially filled, and then allowing them to generate themselves. 
+
+For each generation, plants will slowly lose their health, and once health is 0 or lower, then it dies. 
+
+But, each plant’s health is dependent on size as well as how many plants surround it, as if more plants surround it, it obviously will lose health faster as other plants will obviously interfere with them getting their nutrients 
+
+A plant’s reproductive chances are also influenced by its size, as well as the fact that it will always reproduce if possible if it finds that all four surrounding cardinal squares are empty (only possible if not on the edges) 
+
+There is some randomness related to an atrophy or gain of plant size throughout a plant’s life, the decrease in health, and whether or not a plant will reproduce. The produced child will inherit its health from its parent, but size from randomly. 
+
+For example, having a larger size means that you lose health faster, but also that you will reproduce more often. 
+
+Being surrounded by more neighbors is generally negative for your survival chances. 
+
+Having higher health leads to healthier babies. 
+
+The sizes are bounded between 50 and 70. 
+
+I think my simulation is interesting because it tends to last a long time, is somewhat realistic in that it logically gives certain penalties to plants based on real-life factors, but also manages to have plants that are temporary, and that can create a sort of mesmerizing pattern that moves, dies, but then rebirths consistently. 
+
+Most of my time was spent trying to tweak the parameters such that the grid wouldn’t just fill up immediately and have an interesting visual display, while also incorporating plant features and stats into it. (I would try to preserve the patterns made while incorporating different size/health penalties, etc.) 

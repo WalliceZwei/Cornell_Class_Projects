@@ -1,0 +1,966 @@
+commit ae614bffb1eefbea34d11d87081cccb1974551e9
+Merge: 2710c30 a92f016
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri May 16 08:50:02 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:afs223/cs3110-final
+
+commit 2710c301115142bceac4e877afecb4de60669ba8
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri May 16 08:49:38 2025 -0400
+
+    update test_simparams
+
+commit a92f0162511e37135c4d65baa920c0851e119030
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 08:48:08 2025 -0400
+
+    Fixed default simparams test
+
+commit a9b95182b162fa0b246f4e04e8fa87f372b5413a
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 08:42:24 2025 -0400
+
+    Final documentation
+
+commit 6aea98c43c0d378f31dff7b8482ed2899bf37885
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri May 16 08:29:40 2025 -0400
+
+    update gallery entry + gitlog
+
+commit 13ff0958137103a0ad95776ec18f28cdf90e261b
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 16 07:49:37 2025 -0400
+
+    Removed simulation speed, made it so 1 pred spawns at beginning always
+
+commit 2c878d9742c96fe8cf1aa850e883798928115eae
+Merge: a961a3f ff339df
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 07:24:26 2025 -0400
+
+    Merge branch 'main' into finaltests
+
+commit a961a3f94d0e9212bf1db01046b9ee239c5e762b
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 07:24:12 2025 -0400
+
+    Yet another fix
+
+commit 940b22292ffb2eafb18fc85d2c375d0abdf9c66a
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 07:22:57 2025 -0400
+
+    More fixes
+
+commit ba73b67893abd992db7632ec6a896b488bc09e82
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 07:20:23 2025 -0400
+
+    Edits to fix merge
+
+commit 1ed66ac4e87936d618c20adc5dfa25436aa27e05
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 07:15:52 2025 -0400
+
+    Edited to merge with main
+
+commit eaa92c44273331afd503d9407493aef3e02c2a36
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 07:11:17 2025 -0400
+
+    Added reproduction tests
+    
+    - Full reproduction coverage
+
+commit ff339df79a17dc0fefc287ce2dd9f8df1a8a09f3
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri May 16 03:33:13 2025 -0400
+
+    Predators are now avoided by boids if possible
+
+commit 5bfa69e52190ad2469ae6d957ece84441252b9a7
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 16 02:50:15 2025 -0400
+
+    Minor refactoring
+
+commit 9d3b64d884afa3c0ba007d961b0e65c8b41eaf2b
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 16 02:40:02 2025 -0400
+
+    Added extras.mli
+
+commit 6d53d424b5381bd1628b71d2b2d96659549f1f2f
+Merge: 3619d76 1c5de76
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 16 02:25:36 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:afs223/cs3110-final
+
+commit 3619d764b7b7bdb48c5dbb15fae815d2e63b64c5
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 16 02:02:45 2025 -0400
+
+    Implemented adding boids on click
+
+commit 1c5de76bf30a6115b9cf2931fa2b34b2aecbc504
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri May 16 01:54:45 2025 -0400
+
+    Further cleaning of files
+
+commit 74e13cc594f89e38e17b555c81e2a3fba987811c
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri May 16 01:28:31 2025 -0400
+
+    Quick removal of some unneccessary simparams
+
+commit 0328720fc80a19fb173e51fafd190f2b60fbbdaf
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 01:12:47 2025 -0400
+
+    Added commented test pred back
+    
+    - Over 90% pred coverage
+
+commit 9a44b890900a9d9a13449e2a0834de61df6c2686
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 16 01:04:07 2025 -0400
+
+    Added comparison for hungry test
+    
+    - Better hungry coverage
+
+commit 6ff659ff0e3a687d1bf699d506e2fba7acc7f9bf
+Merge: 46fd132 d00d705
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 16 00:17:15 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:afs223/cs3110-final
+
+commit 46fd13283bff1f2bacf337e2d7cc08786d6c02f5
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 16 00:12:31 2025 -0400
+
+    Fixed obstacle spawning, fixed mouse click strength, fixed obstacle resizing
+    
+    - added slider to obstacle radius
+
+commit d00d7051072c8a6eca77d3189e3f7eff80c80626
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri May 16 00:02:01 2025 -0400
+
+    Predator now more functionally like a boid
+
+commit 8eb8fe335696bed5de55c0f9cfe151c16bcae733
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 22:56:58 2025 -0400
+
+    Readded pred test file
+
+commit 94cbb120e6d892d2c77aa148f32ec5dee720c625
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 22:48:24 2025 -0400
+
+    Removed rboid
+    
+    - Removed unneeded rboid and used hboid instead
+
+commit 4a2be21b7e5349b4f645e4a17276daf37e9e6bcf
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 22:37:51 2025 -0400
+
+    Starting to remove predator
+
+commit df604884a64dcb0603f01841e39a8835aa6d96d0
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 22:18:37 2025 -0400
+
+    Fixed food spawn rate
+    
+    - At most 1 food spawns now with probability
+
+commit 010c4289af20b94dbaaa58e0fa6cf7b68165f486
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 22:07:20 2025 -0400
+
+    remove merge conflict fuck up
+
+commit 98976971eaaa8bd62bb7e62634abb79033a32342
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 22:06:21 2025 -0400
+
+    Update desc
+
+commit 0f2dbe8296493f597aab40d9d38468c100adbc53
+Merge: 5ee2a09 e0502e4
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:52:55 2025 -0400
+
+    Merge branch 'foodmain'
+
+commit e0502e47cdd75dfb2f5d5b92ad7ade30e44eae59
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:52:21 2025 -0400
+
+    Did nothing
+
+commit 2fb524b4c70789a42dbc4e69deb364447becd5d2
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:48:26 2025 -0400
+
+    Fixed bug
+
+commit 43e291d3c89bc422cd37f06e82ffb09f49188532
+Merge: 2b659b5 1dbe3d8
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:48:02 2025 -0400
+
+    Merge branch 'main' into foodmain
+
+commit 2b659b580d11f07bf72571dbb36643be1f2089ae
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:42:30 2025 -0400
+
+    Nothing
+
+commit c56e12d82a1e49c724f07b518a59487614524c61
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:40:12 2025 -0400
+
+    Actually fixed boid amount
+
+commit 5ee2a094285560f4e6e3355635a240308da6938c
+Merge: 9e42e67 1dbe3d8
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 21:39:59 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:afs223/cs3110-final
+
+commit 9e42e67fcc72ac9a79b9f250b02757730178a4f4
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 21:39:53 2025 -0400
+
+    remove unneeded sliders
+
+commit bd6a58d44d5ba2f1469e8964f8ab1a79762b455f
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:38:27 2025 -0400
+
+    Changed boid starting to 1000 to match main
+
+commit ad0229bfd348181ed5e67e47bb91325fb82e9aae
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:30:14 2025 -0400
+
+    Fixed exceptions
+
+commit ff0da7bc8257094f9687af6a470fee3634de62f5
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 21:24:52 2025 -0400
+
+    Fixed crashing on extinction
+
+commit 1dbe3d82c9fa9522dbadcbe5d20e7502b1d98585
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu May 15 21:23:50 2025 -0400
+
+    fixed small bug lol
+
+commit 8618ed8cc31fd6c0bdcd4d17bbb2d57b420e8724
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu May 15 21:20:53 2025 -0400
+
+    One random test not working in simparams, besides that simulation now works
+
+commit b480d518b68282e760f4a182e8875a55c676a524
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 21:05:55 2025 -0400
+
+    adjust food spawn rate slider
+
+commit c69834e693f865fd898b8fcd4ea3cd5d13b9b27c
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 20:56:56 2025 -0400
+
+    Implemented food in GUI
+    
+    - Food spawns as yellow dots
+    - Boids eat food
+    - Fixed bug for obstacle drawing (I think)
+
+commit ff0e920edb2edfaf78e634f346cd6c7d299f414c
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 20:16:12 2025 -0400
+
+    Food works?
+
+commit d24c430d94cbff31f016e9e6a8aef64a4dc50087
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 20:11:30 2025 -0400
+
+    update gallery Entry
+
+commit 5d9ec068c1831257b972b4819d2395b7080027cb
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 19:48:28 2025 -0400
+
+    Add testing for simparams
+
+commit 1c3c39b7736e3e276ae26e9e1bbda49954559814
+Merge: 4da43c2 901dfb0
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 19:32:04 2025 -0400
+
+    Merge branch 'test_simparams'
+
+commit 901dfb0eff904946a91414eac9a0c5efccf53870
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 19:31:52 2025 -0400
+
+    add tests for simparams
+
+commit 482da42f180cd68ebc784a8f36d3cb2ac8f156a9
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 18:07:38 2025 -0400
+
+    Trying to merge
+
+commit 365167b2f355498327d6f3143a8ebb5266e45f59
+Merge: 4da43c2 a20a3f4
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 15 18:04:45 2025 -0400
+
+    Merge branch 'food' into foodmain
+
+commit 4da43c2a0dee526743d95174769be558d21b3d09
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu May 15 15:42:22 2025 -0400
+
+    Beginning to work on predator with the gui
+
+commit 79dbd632535e2f7eb3460f7ced02df49bc4f40a5
+Merge: 90d8cbc 92783e4
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 10:00:15 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:afs223/cs3110-final
+
+commit 90d8cbc64e9700e37cc1de35c3205100800e1907
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Thu May 15 09:59:42 2025 -0400
+
+    add reset button and increase win. size
+
+commit 92783e499b06a1e7ad2efed5681db3572e8dace2
+Merge: f7f99d5 d88e3b8
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Thu May 15 00:11:26 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:afs223/cs3110-final
+
+commit f7f99d5afeadb52222c9953f0f754fa405ffbebf
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Thu May 15 00:11:17 2025 -0400
+
+    Implemented mouse attractiveness; a little funky but that just seems to be how it works
+
+commit d88e3b81217085c1681456880e8e33656cfd1709
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Wed May 14 23:55:48 2025 -0400
+
+    Predator should be complete, just need to test it out a bit with gui
+    
+    dquote> - Predator tests added
+    dquote> - Functionality mostly complete, just need to visually confirm with gui
+
+commit 4114f839f0ae894b59d642c80b0ed6d230d1bde8
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Wed May 14 23:25:14 2025 -0400
+
+    Fixed obstacle behavior
+    
+    - changed obstacle rendering; now black and size dependent on strength
+    - changed range & default value of obstacle strength
+    - still yet to implement clicks
+
+commit 1518dd239f278fd06c9e567accd37302c5a2996e
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Tue May 13 16:42:55 2025 -0400
+
+    attempt to draw obstacles - broken
+
+commit 63e48139081f45adbcfe6dba529cc1220cb3e536
+Merge: 1c59987 5551e46
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Tue May 13 16:20:42 2025 -0400
+
+    Merged obstacle_impl branch into main & resolved conflicts
+
+commit 1c599875a0ef7167cff50c6b0ba379e31ffb2116
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Tue May 13 15:56:05 2025 -0400
+
+    Implemented testing for obstacle functoins
+
+commit a20a3f4cf899a4016ddd28a0f6910a346860b1e1
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Tue May 13 15:36:30 2025 -0400
+
+    Added missing files
+
+commit ae319e72bdf0f5ff3a8a070928fabb609c626d45
+Merge: a1f912d adde0b0
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Tue May 13 15:20:28 2025 -0400
+
+    Merge branch 'main' into food
+
+commit a1f912db746c7da4d872515969d5f3048cb3d402
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Tue May 13 15:02:48 2025 -0400
+
+    Implemented reproduction
+    
+    - Added creation of babies
+
+commit 5551e4686ee055b1d72112aad52feefb85191293
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Tue May 13 14:54:39 2025 -0400
+
+    initial mouse attr of 0
+
+commit 40c59795218fe4d69099186835ecc92c5c3e53f8
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Tue May 13 14:53:47 2025 -0400
+
+    add slider for obstacle strength
+
+commit 883b0b1347fbdc60597e69775e62ce63b49fc163
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Tue May 13 14:19:20 2025 -0400
+
+    Added ability for gui to draw obstacles [doesn't actually draw yet]
+    
+    - gui method to draw obstacles currently just ()
+
+commit 06e080e7cef6f78a95e218776f14ec1b7c5ebe78
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Tue May 13 13:44:55 2025 -0400
+
+    update interface to accept sim params
+
+commit bed1ef60a32135a9e58be689253f8ea1918d32fe
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Tue May 13 13:44:27 2025 -0400
+
+    add sliders to update sim params
+
+commit f76c21940efe26c718305f41c98d01471d9da07d
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Tue May 13 13:43:19 2025 -0400
+
+    Update instructions
+
+commit f6c196db214120f0566c36873d77204c17fdb622
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Tue May 13 01:14:32 2025 -0400
+
+    Added field for testing purposes; obstacles do seem to repel
+
+commit 6f13bfadb203c17bcb45bad0f9be094cd4a7924f
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Tue May 13 01:05:06 2025 -0400
+
+    Same changes as previous commit; weird git behavior
+
+commit 93b7ad277a5b81e7d2456b24f5642786f21ffc8f
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Tue May 13 01:03:14 2025 -0400
+
+    Implemeneted representation and calculation for obstacles
+    
+    - untested
+    - still must add mouse click events somehow
+
+commit cc711be3fd3fe857b6e4388c64bd5801c9e20b32
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Sat May 10 16:43:40 2025 -0400
+
+    Implemented most of reproduce
+    
+    - All basic reproduce functions complete
+    - Only need to simulate one boid reproducing (unfinished function)
+    - Made new test file for reproduction
+
+commit 20e0a8a72afb7ae7d5d9c6eac0685fb67f0cfbae
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Sat May 10 15:45:05 2025 -0400
+
+    Implemented removing hboid and lots of testing
+    
+    - Very good coverage for food and hungry and extras
+
+commit b53c9cb43e0b8db831ab88be36f8076b70c9bcef
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 9 16:53:00 2025 -0400
+
+    Some testing and bugfixing
+    
+    - Split test_food into test_food and test_hungry
+    - Food has 100% coverage
+    - Still need to test hungry
+
+commit 7af354b1e1433dc4802c9bbb51282ddb7c8f7c5b
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Wed May 7 23:27:35 2025 -0400
+
+    Fixed food simulation
+    
+    - Fixed bug where it didn't look at distance
+    - Added Euclidean distance to extras ml file
+
+commit 8c5417220cde5fbf7d918774729699c32f10ef48
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Wed May 7 22:41:41 2025 -0400
+
+    Cleaned up food and split into two compilation units
+    
+    - Food split into two compilation units
+        - Food just has food and foodset
+        - Hungry has hboid and hflock
+    - Cleaned up code and added comments and comment separators for readibility
+    - Removed compilation units not relevant to this branch (will be added when merged with other branches)
+
+commit e2c2abd6ba12218f4fbfa59729b035c75ccaf0ca
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Wed May 7 19:38:35 2025 -0400
+
+    Implemented eating simulation
+    
+    - Finished eating simulation
+    - Some basic tests including specification comparing two simulations
+    - Probably should break food up into 2 compilation units (food and hungry boids)
+
+commit a2d0a732bd844bf8339d6f174464e2b9816ac60f
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Mon May 5 10:07:33 2025 -0400
+
+    Added ability to run multiple tests from dune
+
+commit 245780ef2f606b11ec1a17d3e6a70efc66fffd9c
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Fri May 2 16:30:35 2025 -0400
+
+    Implement most of simulate_hungry
+    
+    - Lots of helper functions like simulate_eating and it's helper
+    - Need to implement boid_eat_foodset which has a hboid eat the closest food in foodset if possible
+
+commit adde0b080b28d7382031af4bbb04d888292f6ffe
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri May 2 16:19:15 2025 -0400
+
+    Added obstacle representation (no logic implemented; to be done on branch)
+
+commit 265e595170b9d91309b38da6830b713a4cab45aa
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 1 23:37:20 2025 -0400
+
+    Implemented basic food functionality without simulation
+    
+    - Created types for food, foodset, hungry boids, and hungry flock
+    - Creating and accessing food's attributes
+    - Accessing foodset's food and adding and removing
+    - Creating and accessing attributes of a hungry boid
+    - Implemented boid_eat, where a boid eats food
+
+commit 77989f0b2c18e8381fabdbd588d409a4865fae89
+Merge: 238b360 6f61c40
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 1 20:32:33 2025 -0400
+
+    Merge pull request #2 from afs223/restructure
+    
+    Restructure
+
+commit 238b360cc5bad77f6eeb2fe5027e1d18cab0a5fc
+Merge: 4ff55c9 848aacb
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 1 20:14:39 2025 -0400
+
+    Merge pull request #1 from afs223/tests
+    
+    Tests for ms2 functionality (not including tests for simulate except making sure size is constant)
+
+commit 848aacb730b7e88d31a8576f91ff77b2c21657b7
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Thu May 1 20:05:24 2025 -0400
+
+    Testing for standard boids
+    
+    - Wrote many tests for ms2 submission
+    - Implemented string_flock, which returns a string representing a flock
+    - Added a function for making a string to represent any list in Extras
+
+commit 6f61c40517f96423c8141a6d25da7f28d0464725
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Apr 11 14:28:13 2025 -0400
+
+    update simParams
+
+commit baac5418ef14efc1eb302d805bd05123e39c5fbd
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Apr 11 13:55:16 2025 -0400
+
+    Add new compilation units (not populated yet)
+
+commit cf9485e4f3c92f4aee57b5fb3ce8a0adb06819a7
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Sat Apr 5 21:15:17 2025 -0400
+
+    Started Test Suite
+    
+    - Added extras.ml for useful unrelated functions for testing (such as printing pairs and lists)
+    - Added to_string methods for boids and flocks, but only implemented the boid one
+    - Added some basic tests
+
+commit 4ff55c951083a01a343aeab83fd4a5093310f381
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Mar 28 20:09:20 2025 -0400
+
+    Commented and Removed
+    
+    - Removed unnecessary code
+    - Commented helper functions
+
+commit 1c089a29fec151db3f90ce347792004119f8e000
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Mar 28 15:49:11 2025 -0400
+
+    add galleryEntry.yaml
+
+commit 460f6dea347ec79faefcd77aced5640afb5ae95c
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Mar 28 12:33:25 2025 -0400
+
+    add gitlog for submission
+
+commit 71135dcca6653f0aae708c839b199250d5a1e3eb
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Mar 28 10:36:04 2025 -0400
+
+    update readme
+
+commit a5117e9c72f9111c8c46e2c6367606569c2be1e6
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Mar 28 10:35:08 2025 -0400
+
+    update instructions
+
+commit 8d99a1a08a27a6f36fe555a669a50cd2bf0191da
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Mar 28 10:34:07 2025 -0400
+
+    update instructions
+
+commit a750c09f2ab111f6dd1e9e324849faf2f5a48711
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Fri Mar 28 10:32:28 2025 -0400
+
+    Add installation instructions
+
+commit 522c7d884afa2bfa43801c00c7362fea100ea1e9
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 27 14:57:45 2025 -0400
+
+    Looks a little better now with the boids
+    
+    - Fixed the randomflocking behavior, maybe that was the problem, maybe not
+
+commit b7c28a8579762e04c034fba8c405452d2df877bd
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Thu Mar 27 13:04:56 2025 -0400
+
+    Semi-fixed the simulation, looks janky though, goes one direction
+    
+    - Added speed limitin, wrappign around boundaries
+    - Added a perception radius
+    - Refined other operations
+
+commit 89878cec23f3a39a9e0a7571cea53329b427f827
+Merge: 7b336dc 03b1455
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 19:29:20 2025 -0400
+
+    Merge branch 'merge_gui_rules'
+
+commit 03b14556f696cf679302b5b5d872879398e59d5f
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 19:24:29 2025 -0400
+
+    complete merge
+
+commit 9bd2b84073e5a042694e776899a97249af562a50
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 19:06:37 2025 -0400
+
+    fix dumb semicolon
+
+commit 33153f1e78ffc5ae647990fedc413d2a90536374
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 19:06:11 2025 -0400
+
+    update import
+
+commit cc2019b171f12849aaa2a361d7b921bdf1d8d867
+Merge: 8218032 9d7f0c3
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 19:04:11 2025 -0400
+
+    merge boids
+
+commit 9d7f0c33f5791127efbe531aa6540ba1e7c750b3
+Merge: 2e2c7ac 3ede451
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 18:49:32 2025 -0400
+
+    Merge branch 'rulesbranch' into boids_impl
+
+commit 8218032e3cc2fedb7c8d55a1d8bb290c5731aa92
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 18:45:00 2025 -0400
+
+    remove print statements
+
+commit 2e2c7ac7d97a0f22b12aeb4e67c116f5f9226a64
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Wed Mar 26 18:06:26 2025 -0400
+
+    Deleted Gui for merging
+
+commit 7b336dceebe5eb659a32a9a022c1d97c7c3a230c
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Wed Mar 26 17:57:33 2025 -0400
+
+    removed space
+
+commit 3ede451c921a1afb0067081e1fb853482be6d328
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Wed Mar 26 17:45:47 2025 -0400
+
+    Started to implement stuff
+
+commit 0e84b0b0e385071856310fe6b0197e13f6456de3
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Wed Mar 26 17:19:11 2025 -0400
+
+    Fix rebase problems
+    
+    - Removed duplicated code
+
+commit aed1a0fb8b1cf62a9a2683c4fa51bdbb3cad06e0
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 11:57:37 2025 -0400
+
+    Added multiple function implementations in boids.ml
+    
+    - getters for position, velocity, angle
+    - flock functions for size of flock, getting a boid from the flock, and adding/removing a boid from the flock
+
+commit 3e2db568ee79cc1481655f51111743e834e07a69
+Merge: ae5a21b 2500c8c
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Wed Mar 26 16:40:46 2025 -0400
+
+    Merge remote-tracking branch 'refs/remotes/origin/boids_impl' into boids_impl
+
+commit ae5a21b7ce9d2223a26ab458408e699a8cb1781e
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Wed Mar 26 16:27:16 2025 -0400
+
+    Update implementation of boids
+    
+    - Boid count is simpler with list library
+    - Append boid now matches spec
+    - Get_boid is simpler with list library
+
+commit 461c832c38274a69c7af155f785b666a026caed9
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Wed Mar 26 13:50:50 2025 -0400
+
+    Implemented random flock generation,
+    
+    - also added placeholder values for boundary and max velocity, should change later
+
+commit db69e06ec0a5d8e9908ef2408706c3aa9d973a5f
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 12:28:07 2025 -0400
+
+    Implemented create_boid
+
+commit ce4defa65ea6e9765c27b835b67617a55ff6ab74
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 11:57:37 2025 -0400
+
+    Added multiple function implementations in boids.ml
+    
+    - getters for position, velocity, angle
+    - flock functions for size of flock, getting a boid from the flock, and adding/removing a boid from the flock
+
+commit 2500c8c1808b524fa12578647990cac3951541c3
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Wed Mar 26 16:27:16 2025 -0400
+
+    Update implementation of boids
+    
+    - Boid count is simpler with list library
+    - Append boid now matches spec
+    - Get_boid is simpler with list library
+
+commit 7b08ee8f0d8ceb6aad6e2dd7f5aff24613e8bd87
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 26 16:24:46 2025 -0400
+
+    working boid drawing + placeholder implementations for backend
+
+commit 9f763b75c06243f8ca5f5e71d9b33207202400fe
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Wed Mar 26 13:50:50 2025 -0400
+
+    Implemented random flock generation,
+    
+    - also added placeholder values for boundary and max velocity, should change later
+
+commit caca2a91f6827dfb1e6eb55941e947cac70faf2e
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 12:28:07 2025 -0400
+
+    Implemented create_boid
+
+commit d3b51cafe09e6584265ddbcb4036d1b06872aa4d
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 11:57:37 2025 -0400
+
+    Added multiple function implementations in boids.ml
+    
+    - getters for position, velocity, angle
+    - flock functions for size of flock, getting a boid from the flock, and adding/removing a boid from the flock
+
+commit 2d65d5fe596f5b3a75a8dc604650e9d662f959b6
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 11:54:30 2025 -0400
+
+    Minor changes to boids interface
+
+commit f71707f095fb98e4b6c8b05a7129f0344f1a3c38
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 11:15:16 2025 -0400
+
+    Updated the type of boundary
+
+commit 70888b0dbe267722b56b96ee8bc70a4de9ae7ed3
+Author: Alex Saccone <acs376@cornell.edu>
+Date:   Fri Mar 21 11:00:04 2025 -0400
+
+    Added random flock generation to boids interface
+
+commit 62e58b25b6da55b1a5f35f49e623b61305d61a58
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Thu Mar 20 22:13:46 2025 -0400
+
+    Added features to the interface boids.mli
+    
+    - Added create_boid which creates a boid from a position and velocity
+    - Added boid_count which returns the number of boids in a flock
+    - Added append_boid which adds a boid to the end of a flock
+    - Added get_boid which returns a boid from the flock at a given index
+    - Added remove_boid which removes a boid at a specified index and returns the remaining flock
+    - Added an exception for invalid indexes
+    - Removed the index part of the boid record in the implementation
+
+commit fa027d81e4a904aeee95f772f0ffe0fddcf9e05e
+Author: Tyler White <tjw238@cornell.edu>
+Date:   Wed Mar 19 21:02:45 2025 -0400
+
+    Wrote preliminary interface for boids (boids.mli)
+    
+    - Removed angle from boid implementation since it can be calculated from velocity
+    - Created a get_pos and get_vel functions
+    - Created get_ang, which calculated the angle
+    - Added boundary and max_speed values, which help the boids stay on the screen and don't go to fast
+    - Added simulate_frame, which advances a flock to the next flock
+
+commit 8285678cb5dd283ab36718d1634310d7070ccee3
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 19 18:28:02 2025 -0400
+
+    Add gui interface, placeholder in gui.ml
+
+commit 9aa05a9c3cecac146bce8c7a84df285b75148936
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Wed Mar 19 08:38:17 2025 -0400
+
+    setup initial structure
+
+commit 95bebdb00fe5a14732e57e195604254decf0c470
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Mon Mar 17 13:55:39 2025 -0400
+
+    Auto generated
+
+commit c4b57873fb81ed04dde0f2611e62a18105182a5c
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Mon Mar 17 13:53:53 2025 -0400
+
+    Install raylib and get a window opening
+
+commit 145a8e0fbe7f3a492656274bf7a5f0fc521227b3
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Mon Mar 17 13:53:28 2025 -0400
+
+    Update readme with deps
+
+commit 4fa2086557515a6ae68a9c1084f4c96c4a65c9d2
+Author: Alexander Schatzberg <alex1nderschatzberg@gmail.com>
+Date:   Sat Mar 15 09:32:42 2025 -0400
+
+    init dune project
+
+commit 104e5f16693b18224440fa75af0c3222353f99d8
+Author: acs376 <acs376@cornell.edu>
+Date:   Tue Mar 11 23:01:18 2025 -0400
+
+    Update README.md with my name
+
+commit f31aacbc95b9bb3faa9faf5954f8025659c03d6d
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Tue Mar 11 22:52:35 2025 -0400
+
+    Update README.md
+
+commit edf7f2e9d9023aa92f5be6439a3a5f037b859c1b
+Author: tjw238 <tjw238@cornell.edu>
+Date:   Tue Mar 11 18:59:26 2025 -0400
+
+    Update README.md
+
+commit b7b904b5b9d820c378c3b224852abb3fb84561d2
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Tue Mar 11 18:39:00 2025 -0400
+
+    Update README.md
+
+commit cf0a5a263059e79270747687e6e88d64b17cbb39
+Author: afs223 <afs223@cornell.edu>
+Date:   Mon Mar 10 23:37:23 2025 -0400
+
+    Update README.md
+
+commit 361bea56a26957a32f444cfd3195884bfe6a9344
+Author: afs223 <afs223@cornell.edu>
+Date:   Mon Mar 10 23:35:49 2025 -0400
+
+    Initial commit

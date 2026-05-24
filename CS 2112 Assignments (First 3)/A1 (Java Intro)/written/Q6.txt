@@ -1,0 +1,26 @@
+The method is the coefficient() method, and the unspecified precondition is that the exponent input must be at or below the highest degree of the polynomial (below the length of the coefficient array) and not be negative. Otherwise, the coefficient is automatically 0. 
+
+If you leave the code as be, it will return an error, because it will try to find an index of the coefficient array that doesn't exist because the index is too large if you input an exponent higher than the polynomial degree. 
+
+The same error applies if you input a negative index, but vice versa, since arrays can't have negative indices in Java. 
+
+For example: 
+
+Let's say a polynomial's coefficient list is [2,1,1,1,2024]
+
+Then calling coefficient(5) on this will result in an error, because it tries to find index 5 of the coefficient array, which obviously doesn't exist because indexing is 0 based.  
+
+Calling coefficient(-1) will also result in an error, because arrays can't have a negative index.
+
+The ideal resulting value for these cases should be 0, as the degree is always a positive number, so there aren't any coefficients for negative degree exponents, and if a exponent is too large, then no coefficient exists because it isn't in the polynomial. 
+
+If you just want to state the precondition:
+
+// exponent must be above or equal to 0, and below the length of the coefficient array / highest polynomial degree (0<=exponent<this.coefficients.length)
+
+
+If you want to directly enforce it: 
+
+if (exponent >= this.coefficients.length || exponent<0){
+            return 0;
+        }

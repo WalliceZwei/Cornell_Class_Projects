@@ -1,0 +1,33 @@
+---
+# Members of your group.
+group:  
+  - name: Alexander Schatzberg 
+    netid: afs223 
+  - name: Wallace Wei
+    netid: wzw4
+  - name: Tyler White
+    netid: tjw238
+  - name: Alex Saccone
+    netid: acs376
+
+
+# Your PM.
+pm: 
+  name: Daniel Sorokin
+  netid: dhs263
+# Set to false if you don't want your gallery entry to be public.
+publish: true
+# Pithy title
+title: "Boid Meets World"
+git-repo: "https://github.coecis.cornell.edu/afs223/cs3110-final
+demo-video-url: "https://www.youtube.com/watch?v=KhFS4JHQX3g"
+
+# Write a short, attention-grabbing description of your project.
+desc: >
+  Boid Meets World is an ecosystem simulation that demonstrates disparate 
+  individual predators targeting a flock of creatures. The prey creatures 
+  are simulated with an algorithm inspired by Boids, a program developed 
+  by Craig Reynolds in 1986, while the predator creatures follow a set of 
+  rules we developed. The prey reproduce when they encounter sufficient 
+  food and flee from predators, while the predators are attracted to and 
+  consume the boids.

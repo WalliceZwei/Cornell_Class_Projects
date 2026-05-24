@@ -1,0 +1,6 @@
+original_data := load "data/t.csv";
+print (original_data);
+renamed_data := rename "ID" to "ItemID" from original_data;
+print renamed_data;
+renamed_again := rename "Price" to "Cost" from renamed_data;
+print (renamed_again);

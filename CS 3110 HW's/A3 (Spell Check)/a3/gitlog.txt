@@ -1,0 +1,67 @@
+commit f856fb063de31661da32a9b875e7461257d705d1
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Mon Mar 3 14:04:42 2025 -0500
+
+    Fixed some bugs with choosing, allowed for quitting, and added some test cases
+    
+    - Added positive.txt
+    - Added negative.txt
+    - Fixed up the quit functionality and the selection of suggestions
+
+commit 5d971f3788caa0f554b1fbefbe70a8b69c30c3dc
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Mon Mar 3 11:15:24 2025 -0500
+
+    Finished up the functions to add to dicitonary and write out to user dictionary
+    - Started commenting the rest
+    - Added some more test cases
+    - Completed the main driver function to parse the sentences
+
+commit 9dca5e87c74750a6415c84947b8af79c54eb77b7
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Sat Mar 1 21:32:05 2025 -0500
+
+    Added signatures for new functions, integrated new functions into sentenceparser
+    
+    - Made it so that it prompts user if they want to add unknown word to their dictionary
+    - Changed signature of the sentenceparser so that it now returns the modified dictionary instead of the old one
+
+commit 8ec0d05b545bb56b2114d26b42a147a43820053f
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Sat Mar 1 20:56:00 2025 -0500
+
+    Added some more comments, mostly finished the driver program
+    
+    - Added dictionary, other test text files as well
+    - Added some more functionality in spelling dictionary, like new operations like append
+    - Basically done with the driver program, allowed it to iterae over the text and use regular expressions to prompt the user to spell check, as well as write that out
+
+commit 3d6f25b4e7853c67e864aff27437b8a37e010ca4
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Feb 28 23:00:28 2025 -0500
+
+    Mostly Implemented spellingDictionary tests
+    - added test cases for the spelling dictionary functions
+    - implemented spelling dictionary functions
+    - added .txt dictionary files to test
+
+commit c806bce501e124ce207c9e326beb4a18cb82dbda
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Feb 28 18:52:26 2025 -0500
+
+    Complete the spellingDictionary.mli file
+    
+    - wrote the comments for the signatures
+    - wrote the signatures up
+
+commit e7e53639949a5143b724fdc20f246f612b23826a
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Feb 28 17:32:09 2025 -0500
+
+    Testing
+
+commit 879961fb7c9366b326d1b3f2503d938e661ce514
+Author: wzw4 <wzw4@cornell.edu>
+Date:   Fri Feb 28 17:17:22 2025 -0500
+
+    Initial commit

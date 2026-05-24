@@ -1,0 +1,3 @@
+The class invariant preserved throughout the class Polynomial is that:
+
+It is a representation of polynomials with non negative integer exponents, with integer coefficients, where the default is the zero polynomial. These polynomials are represented in an array that removes any trailing zero coefficients on the ends to preserve the correct polynomial degree and coefficient array length (for example, the zero polynomial has has a an empty coefficient array). 
